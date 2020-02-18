@@ -2,7 +2,7 @@ import Core from '../utiliy/core'
 
 const attr = {
     _set: function (dom, key, val) {
-        dom.setAttribute(key, value);
+        dom.setAttribute(key, val);
     },
     set: function (dom, key, val) {
         Core.access(dom, key, val, this._set);

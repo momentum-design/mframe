@@ -22,10 +22,14 @@ class KeyFrames {
         this.PropName = Prop;
     }
 
+    _sort(a, b) {
+        return a - b;
+    }
+
     add(value, time, tween) {
         if (this.Timing.indexOf(time) === -1) {
             this.Timing.push(time);
-            this.Timing.sort();
+            this.Timing.sort(this._sort);
         }
         this.Keys[time] = {
             value: value,
@@ -42,7 +46,7 @@ class KeyFrames {
             timing = this.Timing;
         for (let index in this._LaterComplie) {
             time1 = timing[+index];
-            time2 = timing[+index+1];
+            time2 = timing[+index + 1];
             start = keys[time1];
             end = keys[time2];
             this._patch(time1, time2, this.val(start.value), this.val(end.value), end.tween);
@@ -73,7 +77,7 @@ class KeyFrames {
     val(value) {
         if (typeof value === 'function') {
             return value();
-        } else if(value === null) {
+        } else if (value === null) {
             return this.CpuCore.get(this.Dom, this.PropName);
         } else {
             return value;
@@ -81,7 +85,9 @@ class KeyFrames {
     }
 
     render(i) {
-        this.CpuCore.set(this.Dom, this.PropName, this.Frames[i]);
+        if(this.Frames[i]!==undefined) {
+            this.CpuCore.set(this.Dom, this.PropName, this.Frames[i]);
+        }
     }
 
     _patch(time1, time2, val1, val2, tweenName) {
@@ -98,11 +104,11 @@ class KeyFrames {
             if (analyzeItem) {
                 if (needConvert) {
                     for (let i = time1 + 1; i < time2; i++) {
-                        this.Frames[i] = +this._patchProp(val1, analyzeItem, i - time1, duration, tween);
+                        this.Frames[i] = +this._patchProp(v1, analyzeItem, i - time1, duration, tween);
                     }
                 } else {
                     for (let i = time1 + 1; i < time2; i++) {
-                        this.Frames[i] = this._patchProp(val1, analyzeItem, i - time1, duration, tween);
+                        this.Frames[i] = this._patchProp(v1, analyzeItem, i - time1, duration, tween);
                     }
                 }
             }
@@ -124,7 +130,7 @@ class KeyFrames {
             _int = analyzeItem.int,
             _number = this._number,
             index = 0;
-            
+
         return val.replace(this.Reg, function (word) {
             let s = _start[index],
                 e = _end[index],
@@ -210,7 +216,7 @@ class KeyFrames {
             if (regList[i].test(val)) {
                 return i;
             }
-        }   
+        }
         //return i;
     }
 
