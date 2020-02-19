@@ -6,7 +6,7 @@ export default () => {
     ball.id ='ball';
     con.appendChild(ball);
     console.log(con);
-    let motion = new Motion([{
+    let motion = Motion([{
         dom: ball,
         frames: [{
             css: {

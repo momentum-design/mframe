@@ -1,12 +1,20 @@
 import Motion from './core/index';
 
+const MomentumMotion = function(configs, events) {
+    return new Motion(configs, events);
+};
+
+MomentumMotion.reg = function() {
+    
+};
+
 let registerWindow = (name, func)=> {
     if (typeof window !== 'undefined' && window[name] === undefined) {
         window[name] = func;
     }
 };
 
-registerWindow('MM', Motion);
-registerWindow('MomentumMotion', Motion);
+registerWindow('MM', MomentumMotion);
+registerWindow('MomentumMotion', MomentumMotion);
 
-export default Motion;
+export default MomentumMotion;
