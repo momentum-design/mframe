@@ -7,7 +7,7 @@ console.log(runWebpack);
 
 (async() => {
   await runLib();
-  await runES();
+  // await runES();
   await runWebpack();
   //await runBuildCss(true);
 })();

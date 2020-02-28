@@ -1,5 +1,3 @@
-const RegUpperLetter = /^[A-Z]/;
-
 const Core = {
   create: function (tag) {
     if (process && process.env && process.env.NODE_ENV === 'test') {
@@ -15,7 +13,6 @@ const Core = {
       return v.toString(16);
     });
   },
-  // to be used or removed
   access: function (elem, key, value, fn) {
     var length = elem.length;
     // fake bool
@@ -44,21 +41,8 @@ const Core = {
   isArray: function (obj) {
     return Object.prototype.toString.call(obj) === '[object Array]';
   },
-  isArguments: function (obj) {
-    return Object.prototype.toString.call(obj) === '[object Arguments]';
-  },
   lowerCase: function (word) {
     return word.toLocaleLowerCase();
-  },
-  lowerCaseInital: function (word) {
-    return word.replace(RegUpperLetter, this.lowerCase);
-  },
-  getReturnOrValue: function (config, d, i) {
-    if (typeof config === 'function') {
-      return config(d, i);
-    } else {
-      return config;
-    }
   },
   int: function (num, def) {
     let d = def || 0,

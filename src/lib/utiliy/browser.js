@@ -43,11 +43,7 @@ const Browser = {
             }
         }
         //mobile
-        this.IsIPhone = /iphone/.test(_userAgent);
-        this.IsWP8 = /windows phone/.test(_userAgent);
-        this.IsIE9 = /msie 9.0/.test(_userAgent);
         this.IsMobile = /mobile/.test(_userAgent);
-        this.IsWP8QQ = /msie 9.0/.test(_userAgent) && /mobile/.test(_userAgent);
     },
     upper1st: function(name) {
         return name.charAt(0).toUpperCase() + name.slice(1);

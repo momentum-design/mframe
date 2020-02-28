@@ -1,9 +1,9 @@
 {
-  "name": "@momentum-ui/motion",
-  "version": "1.0.0-beta.10",
-  "description": "momentum style motion library",
+  "name": "mframe",
+  "version": "1.0.0",
+  "description": "motion library from Cisco Momentum team",
   "main": "src/lib/index.js",
-  "module": "es/index.js",
+  "module": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/momentum-design/momentum-ui.git"

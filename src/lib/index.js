@@ -1,12 +1,13 @@
 import Motion from './core/index';
+import Cpu from './cpu/index';
+import Tween from './math/tween';
 
-const MomentumMotion = function(configs, events) {
+const MFrame = function(configs, events) {
     return new Motion(configs, events);
 };
 
-MomentumMotion.reg = function() {
-    
-};
+MFrame.Cpu = Cpu;
+MFrame.Tween = Tween;
 
 let registerWindow = (name, func)=> {
     if (typeof window !== 'undefined' && window[name] === undefined) {
@@ -14,7 +15,7 @@ let registerWindow = (name, func)=> {
     }
 };
 
-registerWindow('MM', MomentumMotion);
-registerWindow('MomentumMotion', MomentumMotion);
+registerWindow('mf', MFrame);
+registerWindow('mframe', MFrame);
 
-export default MomentumMotion;
+export default MFrame;

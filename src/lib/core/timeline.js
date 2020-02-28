@@ -1,28 +1,6 @@
 import KeyFrames from './keyFrames';
-import Events from './utiliy/events';
-import Cpu from './cpu/index';
-
-/*
-{
-    dom: 'id',
-    frames: [{
-        css: {
-            width: function() {},
-            height: null
-        },
-        attr: {
-
-        },
-        time: 0,
-        tween
-    },{
-        css: {}
-    }],
-    events:{
-
-    }
-}
-*/
+import Events from '../utiliy/events';
+import Cpu from '../cpu/index';
 
 class Timeline {
 

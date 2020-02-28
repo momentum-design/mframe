@@ -1,24 +1,8 @@
 import Timeline from './timeline';
-import Events from './utiliy/events';
-import Core from './utiliy/core'
+import Events from '../utiliy/events';
+import Core from '../utiliy/core'
 
 class Motion {
-
-    /*
-    configs: [{
-        dom: 'id',
-        frames: [{
-            css: {
-                width: function() {},
-                height: '$'
-            },
-            time: 0
-        }],
-        events:{
-
-        }}] 
-    events: { 0 :()=>{}, end: ()=> {} , each:()=> {}}
-    */
 
     constructor (configs, events) {
         this.Timelines = [];
@@ -58,7 +42,6 @@ class Motion {
     run(startFrame, endFrame) {
 
         if (this._AnimationID) {
-            // or pause?
             return this;
         }
 
@@ -106,7 +89,6 @@ class Motion {
     }
 
     render(i) {
-        //render
         Core.each(this.Timelines, 'render', [i]);
         this.Events.emit('each', [i]);
         this.Events.emit(i);

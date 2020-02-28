@@ -1,15 +1,7 @@
-import Cpu from './cpu/index';
-import Color from './math/color';
-import Tween from './math/tween';
-/*
-{
-    css: {
-        width: function() {}
-    },
-    time: 0,
-    tween:'linear css width 1 2 3'
-}
-*/
+import Cpu from '../cpu/index';
+import Color from '../math/color';
+import Tween from '../math/tween';
+
 class KeyFrames {
 
     constructor (dom, core, Prop) {

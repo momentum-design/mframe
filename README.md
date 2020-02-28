@@ -1,35 +1,37 @@
-# Momentum UI Motion
+# MFRAME
 
 [![CircleCI](https://img.shields.io/circleci/project/github/momentum-design/momentum-ui/master.svg)](https://circleci.com/gh/momentum-design/momentum-ui/)
 [![license](https://img.shields.io/github/license/momentum-design/momentum-ui.svg?color=blueviolet)](https://github.com/momentum-design/momentum-ui/blob/master/angular/LICENSE)
 
-> @momentum-ui/motion
+> mframe
 
-Momentum UI Motion is a UI framework for implementing Cisco Momentum Design into web apps and sites.
+Mframe is a light and powerful javascript motion framewrok from Cisco Momentum Team. There are no dependencies in this library, so you can easily use it in any library.
 
 ## Table of Contents
 - [Background](#background)
 - [Install](#install)
-- [Get Start](#get-start)
-- [Fundamentals](#fundamentals)
-- [Techniques](#techniques)
-- [API](#api)
-- [Template](#template)
+- [Documents](#Documents)
 - [Contribute](#contribute)
 - [License](#license)
 
 ## Background
 
-This guide explains how to using Momenmtum Motion Library. The get start section shows an example which covers most usage of Momentum Motion. Foundmamentals section will show the programming principle. The Api section shows the detail usage of each component and class insite Momentum.
-
-Momentum Motion is based on Momentum Design System. The template module in Momentum Motion offers an easier way to draw Motion which follows Momentum Design. The template also keep the flexibility of coding.
-
+In order to develop Momenmtum Motion Library, we develop mframe first. We developed this library based on
+frame-by-frame principle of animation. We hope to narrow down the gap between motion designers and developers with our library. Mframe offers plugin system, any PR is welcome.
 
 ## Install
 
+Install and manage the mframe using NPM. You may use yarn or npm. By default, yarn/npm installs packages to node_modules/.
+
+```npm install mframe --save```
+
+or
+
+```yarn add mframe```
+
 ### Github
 
-You can clone Momentum Motion from [github](https://github.com/momentum-design/momentum-ui/tree/master/motion).
+You can clone Momentum Motion from [github](https://github.com/momentum-design/momentum-ui/tree/master/mframe).
 
 After you download and go to Motion folder, you can run ```yarn build``` to generate different files for usage.
 
@@ -37,15 +39,13 @@ After you download and go to Motion folder, you can run ```yarn build``` to gene
 
 ```/lib``` built folder
 
-```/es``` es6 version
+```/src/lib``` source file, es6
 
-```/src/lib``` source file
+## Documents
 
-## Get Start
+[English](./doc/EN/README.md)
 
-## Template
-
-Template enables engineers to develop some reusable persets of motion. This also help shows full design example from Mementum Design system.
+[中文](./doc/CN/README.md)
 
 ## Contribute
 
