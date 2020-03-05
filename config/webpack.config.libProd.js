@@ -70,12 +70,12 @@ exports.config = Object.assign({}, baseConfig, {
     path.resolve(componentRoot, 'index.js')
   ],
   output: {
-    library: 'momentum-ui-motion',
+    library: 'mframe',
     libraryTarget: 'umd',
     libraryExport: 'default',
     path: path.resolve(repoRoot, 'bundles/'),
     publicPath: '/',
-    filename: 'momentum-ui-motion-min.js'
+    filename: 'mframe.js'
   },
   optimization: {
     minimizer: [
@@ -86,13 +86,5 @@ exports.config = Object.assign({}, baseConfig, {
     ]
   },
   mode: 'production',
-  externals: {
-    d3: {
-      d3: 'd3',
-      root: 'd3',
-      commonjs: 'd3',
-      commonjs2: 'd3',
-      amd: 'd3'
-    }
-  }
+  externals: {}
 });

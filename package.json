@@ -29,7 +29,7 @@
       "js"
     ],
     "moduleNameMapper": {
-      "@momentum-ui/motion": "<rootDir>/src/lib"
+      "mframe": "<rootDir>/src/lib"
     },
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest"

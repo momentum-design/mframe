@@ -14,7 +14,7 @@ const baseConfig = {
   resolve: {
     extensions: ['*', '.js', '.jsx', '.json'],
     alias: {
-      '@momentum-ui/motion': path.resolve(codePath, 'src', 'lib')
+      'mframe': path.resolve(codePath, 'src', 'lib')
     }
   },
 
