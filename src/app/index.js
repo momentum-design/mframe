@@ -79,5 +79,5 @@ window.onload = function() {
         }]
     }].concat(b1).concat(b2).concat(b3));
 	console.log(motion);
-	motion.play();
+	motion.repeat(3);
 };

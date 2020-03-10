@@ -77,7 +77,7 @@ class KeyFrames {
     }
 
     render(i) {
-        if(this.Frames[i]!==undefined) {
+        if (this.Frames[i] !== undefined) {
             this.CpuCore.set(this.Dom, this.PropName, this.Frames[i]);
         }
     }
@@ -91,7 +91,7 @@ class KeyFrames {
             duration = time2 - time1,
             tween = Tween[tweenName] || Tween.linear;
 
-        if (duration > 1) {
+        if (duration > 1 && val1 !== val2) {
             let analyzeItem = this._analyzeMatch(m1, m2);
             if (analyzeItem) {
                 if (needConvert) {
