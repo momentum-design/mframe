@@ -59,12 +59,18 @@ window.onload = function() {
         frames: [{
             css: {
                 transform: 'translateX(0px)'
-            },
+			},
+			arg: {
+				postion: "10 10"
+			},
             time: 5 * step
         },{
             css: {
                 transform: 'translateX(8px)'
-            },
+			},
+			arg: {
+				postion: "10 20"
+			},
             time: 20 * step
         },{
             css: {
@@ -76,8 +82,12 @@ window.onload = function() {
                 transform: 'translateX(0px)'
             },
             time: 50 * step
-        }]
+		}],
+		events: {
+			each: function(index, arg) {
+				console.log(index, arg);
+			}
+		}
     }].concat(b1).concat(b2).concat(b3));
-	console.log(motion);
 	motion.repeat(3);
 };

@@ -1,12 +1,14 @@
 import css from './css';
 import attr from './attr';
 import prop from './prop';
+import arg from './arg';
 
 const Cpu = {
     Cores: {
         css,
         attr,
-        prop
+        prop,
+        arg
     },
     install: function (name, core) {
         this.Cores[name] = core;

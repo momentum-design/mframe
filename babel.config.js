@@ -3,6 +3,7 @@ const presets = [
     "@babel/env",
     {
       targets: {
+        ie: "9",
         edge: "17",
         firefox: "60",
         chrome: "67",
@@ -14,4 +15,4 @@ const presets = [
   ]
 ];
 
-module.exports = { presets };
+module.exports = { presets }

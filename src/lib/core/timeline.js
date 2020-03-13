@@ -48,11 +48,26 @@ class Timeline {
         this._excuteStorage('preComplie');
     }
 
+    getArgs (index) {
+        let storage = this.Storage.arg,
+            ret = {},
+            val;
+        console.log();
+        for(let propName in storage) {
+            val = storage[propName].Frames[index];
+            if(val!== undefined) {
+                ret[propName] = val;
+            }
+        }
+        return ret;
+    }
+
     render(i) {
         if (i>=this.ZeroFrame && i<= this.LastFrame) {
             let index = i- this.ZeroFrame;
+            this.Events.emit('beforeEach',[index]);
             this._excuteStorage('render', index);
-            this.Events.emit('each',[index]);
+            this.Events.emit('each', [index, this.getArgs(index)]);
             this.Events.emit(index);
         }
     }

@@ -89,6 +89,7 @@ class Motion {
     }
 
     render(i) {
+        this.Events.emit('beforeEach', [i]);
         Core.each(this.Timelines, 'render', [i]);
         this.Events.emit('each', [i]);
         this.Events.emit(i);
