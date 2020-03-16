@@ -1,6 +1,6 @@
-import Core from '../utiliy/core'
+import Core from '../utiliy/core';
 
-const attr = {
+var attr = {
     _set: function (dom, key, val) {
         dom.setAttribute(key, val);
     },

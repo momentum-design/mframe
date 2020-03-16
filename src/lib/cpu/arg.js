@@ -1,6 +1,4 @@
-import Core from '../utiliy/core'
-
-const func = {
+var func = {
     set: function (dom, key, val) {
         return '';
     },

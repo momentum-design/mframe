@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "motion library from Cisco Momentum team",
   "main": "src/lib/index.js",
-  "module": "lib/index.js",
+  "module": "src/lib/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/momentum-design/momentum-ui.git"
@@ -19,7 +19,9 @@
     "lint": "eslint --ext .js src",
     "test:CI": "jest --maxWorkers=2 --bail",
     "start": "node tools/website/server",
-    "test": "jest"
+    "test": "jest",
+    "analyz": "yarn analyz:node",
+    "analyz:node": "NODE_ENV=production npm_config_report=true npm run build"
   },
   "jest": {
     "roots": [
@@ -32,25 +34,13 @@
       "mframe": "<rootDir>/src/lib"
     },
     "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    
     },
     "snapshotSerializers": []
   },
-  "dependencies": {
-
-  },
-  "peerDependencies": {
-    "core-js": "^3.1.4"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@babel/cli": "^7.5.0",
-    "@babel/plugin-transform-runtime": "^7.5.0",
-    "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.5.4",
-    "@babel/runtime": "^7.5.4",
     "autoprefixer": "^9.6.1",
-    "babel-eslint": "^10.0.2",
-    "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
     "camelcase": "^5.3.1",
     "chalk": "^2.4.2",
@@ -74,6 +64,7 @@
     "terser-webpack-plugin": "^1.3.0",
     "url-loader": "^2.0.1",
     "webpack": "^4.35.3",
+    "webpack-bundle-analyzer": "^3.6.1",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-md5-hash": "^0.0.6"

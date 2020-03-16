@@ -1,7 +1,7 @@
 import Core from '../utiliy/core';
 import Browser from '../utiliy/browser';
 
-const Help = {
+var Help = {
     support: {},
     regMsPrefix: /^-ms-/,
     regDashAlpha: /-([\da-z])/gi,
@@ -22,7 +22,7 @@ const Help = {
             return name;
         }
         // check for vendor prefixed names
-        var capName = upper1st(name),
+        var capName = this.upper1st(name),
             origName = name;
 
         name = Browser.CssPrefixes + capName;
@@ -33,7 +33,7 @@ const Help = {
         return origName;
     },
     test: function () {
-        let div, a, style;
+        var div, a, style;
         div = document.createElement("div");
         div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input type='checkbox'/>";
         a = div.getElementsByTagName("a")[0];
@@ -60,7 +60,7 @@ const Help = {
             return;
         }
 
-        let origName = this.camelCase(key),
+        var origName = this.camelCase(key),
             style = dom.style,
             name = this.getPropName(style, origName);
 
@@ -75,7 +75,7 @@ const Help = {
             } catch (e) { }
 
         } else {
-            let v = style[name],
+            var v = style[name],
                 ret;
             if (v === undefined || v === '') {
                 try {
@@ -94,7 +94,7 @@ const Help = {
 Help.test();
 
 
-const css = {
+var css = {
     _set: function (dom, key, val) {
         Help.css(dom, key, val);
     },

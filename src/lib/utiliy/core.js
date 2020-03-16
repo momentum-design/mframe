@@ -1,15 +1,8 @@
-const Core = {
-  create: function (tag) {
-    if (process && process.env && process.env.NODE_ENV === 'test') {
-      return document.createElement(tag);
-    } else {
-      return document.createElementNS("http://www.w3.org/2000/svg", tag);
-    }
-  },
+var Core = {
   guid: function () {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-      let r = Math.random() * 16 | 0;
-      let v = c === 'x' ? r : (r & 0x3 | 0x8);
+      var r = Math.random() * 16 | 0;
+      var v = c === 'x' ? r : (r & 0x3 | 0x8);
       return v.toString(16);
     });
   },
@@ -41,11 +34,8 @@ const Core = {
   isArray: function (obj) {
     return Object.prototype.toString.call(obj) === '[object Array]';
   },
-  lowerCase: function (word) {
-    return word.toLocaleLowerCase();
-  },
   int: function (num, def) {
-    let d = def || 0,
+    var d = def || 0,
       n;
     if (typeof num === 'number') {
       n = num >> 0;

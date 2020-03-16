@@ -1,79 +1,75 @@
 import Timeline from './timeline';
 import Events from '../utiliy/events';
-import Core from '../utiliy/core'
+import Core from '../utiliy/core';
 
-class Motion {
-
-    constructor (configs, events) {
-        this.Timelines = [];
-        this.LastFrame = 0;
-        this._AnimationID;
-        this.CurrentFrame = 0;
-        this.Repeat = 1;
-        this.Events = new Events();
-        this.Events.binds(events);
-        this.add(configs);
-    }
-
-    add(configs, ifAppend) {
-        let _configs = Core.isArray(configs) ? configs : [configs],
+var Motion = function (configs, events) {
+    this.Timelines = [];
+    this.LastFrame = 0;
+    this._AnimationID;
+    this.CurrentFrame = 0;
+    this.Repeat = 1;
+    this.Events = new Events();
+    this.Events.binds(events);
+    this.add(configs);
+};
+Motion.prototype = {
+    add: function (configs, ifAppend) {
+        var _configs = Core.isArray(configs) ? configs : [configs],
             lastFrame = 0,
             zeroFrame = ifAppend ? this.LastFrame : 0;
-        for (let i = 0, l = _configs.length; i < l; i++) {
-            let timeline = new Timeline(_configs[i], zeroFrame);
+        for (var i = 0, l = _configs.length; i < l; i++) {
+            var timeline = new Timeline(_configs[i], zeroFrame);
             this.Timelines.push(timeline);
             lastFrame = Math.max(lastFrame, timeline.LastFrame);
         }
 
         this.LastFrame = Math.max(this.LastFrame, lastFrame);
         return this;
-    }
-
-    append(configs) {
+    },
+    append: function (configs) {
         this.add(configs, true);
         return this;
-    }
-
-    bind(key, func) {
+    },
+    bind: function (key, func) {
         this.Events.bind(key, func);
         return this;
-    }
-
-    run(startFrame, endFrame) {
+    },
+    run: function (startFrame, endFrame) {
 
         if (this._AnimationID) {
             return this;
         }
 
-        let start = Core.int(startFrame, this.CurrentFrame),
+        var start = Core.int(startFrame, this.CurrentFrame),
             end = Core.int(endFrame, this.LastFrame),
             i = start,
             stepLength,
-            ifGo;
+            ifGo,
+            me = this;
 
         if (start <= end) {
             stepLength = 1;
-            ifGo = () => { return i <= end; }
+            ifGo = function () { return i <= end; };
         } else {
             stepLength = -1;
-            ifGo = () => { return i >= end; }
+            ifGo = function () { return i >= end; };
         }
 
-        let _run = () => {
-            this.Events.emit('start');
+        var _run = function () {
+            me.Events.emit('start');
             if (ifGo()) {
                 i += stepLength;
-                this.render(i);
-                this._AnimationID = requestAnimationFrame(_run);
+                me.render(i);
+                me._AnimationID = requestAnimationFrame(_run);
             } else {
-                this.Repeat--;
-                if (this.Repeat == 0) {
-                    this._AnimationID = null;
-                    this.Events.emit('end');
+                me.Repeat--;
+                if (me.Repeat == 0) {
+                    me._AnimationID = null;
+                    me.Events.emit('end');
                 } else {
                     i = start;
-                    this.render(i);
-                    this._AnimationID = requestAnimationFrame(_run);
+                    me.render(i);
+                    me._AnimationID = requestAnimationFrame(_run);
                 }
             }
         }
@@ -82,50 +78,42 @@ class Motion {
 
         _run();
         return this;
-    }
-
-    _complie() {
+    },
+    _complie: function() {
         Core.each(this.Timelines, 'complie');
-    }
-
-    render(i) {
+    },
+    render: function(i) {
         this.Events.emit('beforeEach', [i]);
         Core.each(this.Timelines, 'render', [i]);
         this.Events.emit('each', [i]);
         this.Events.emit(i);
         this.CurrentFrame = i;
-    }
-
-    reverse() {
+    },
+    reverse: function() {
         this.run(this.CurrentFrame > 0 ? this.CurrentFrame : this.LastFrame, 0);
         return this;
-    }
-
-    repeat(repeat) {
+    },
+    repeat: function(repeat) {
         this.Repeat = repeat;
         this.play();
-    }
-
-    play() {
+    },
+    play: function() {
         this.run();
         return this;
-    }
-
-    stop() {
+    },
+    stop: function() {
         cancelRequestAnimationFrame(this._AnimationID);
         this._AnimationID = null;
         this.CurrentFrame = 0;
         this.emit('stop');
         return this;
-    }
-
-    pause() {
+    },
+    pause: function() {
         cancelRequestAnimationFrame(this._AnimationID);
         this._AnimationID = null;
         this.emit('pause');
         return this;
     }
-
-}
+};
 
 export default Motion;

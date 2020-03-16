@@ -5,9 +5,9 @@
 const fs = require('fs');
 const webpack = require('webpack');
 const { chalkError, chalkSuccess, chalkWarning, chalkProcessing } = require('../../config/chalkConfig');
-const { config } = require('../../config/webpack.config.libProd.js');
+const { config } = require('../../config/webpack.config.bundles.js');
 
-process.env.NODE_ENV = 'production'; // this assures React is built in prod mode and that the Babel dev config doesn't apply.
+process.env.NODE_ENV = 'production'; //
 
 const runWebpack = () => {
   console.log(chalkProcessing('Generating minified bundle. This will take a moment...'));

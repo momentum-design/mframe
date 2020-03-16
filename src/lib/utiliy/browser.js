@@ -1,58 +1,42 @@
-const Browser = {
+var Browser = {
     _regConfig : {
         Chrome: {
             Reg: /.*(chrome)\/([\w.]+).*/,
-            Core: "webkit",
             CssPrefixes: "Webkit"
         },
         Firefox: {
             Reg: /.*(firefox)\/([\w.]+).*/,
-            Core: "moz",
             CssPrefixes: "Moz",
         },
         Opera: {
             Reg: /(opera).+version\/([\w.]+)/,
-            Core: "o",
             CssPrefixes: 'O',
         },
         Safari: {
             Reg: /.*version\/([\w.]+).*(safari).*/,
-            Core: "webkit",
             CssPrefixes: 'Webkit',
         },
-        /*
-        Microsoft Edge userAgent 2bd
-        */
         IE: {
             Reg: /.*(msie) ([\w.]+).*/,
-            Core: "ms",
             CssPrefixes: 'ms',
         }
     },
-    _userAgent: navigator.userAgent.toLowerCase(),
+    CssPrefixes:'',
     init: function() {
-        let _regConfig = this._regConfig,
-            _userAgent = this._userAgent;
-        for (let _o in _regConfig) {
-            let _result = _regConfig[_o].Reg.exec(_userAgent);
+        var _regConfig = this._regConfig,
+            _userAgent = navigator.userAgent.toLowerCase();
+        for (var _o in _regConfig) {
+            var _result = _regConfig[_o].Reg.exec(_userAgent);
             if (_result != null) {
-                this.Name = _result[1];
-                this.Version = _result[2];
-                this.Prefix = _regConfig[_o].Core;
                 this.CssPrefixes = _regConfig[_o].CssPrefixes;
+                break;
             }
         }
-        //mobile
-        this.IsMobile = /mobile/.test(_userAgent);
-    },
-    upper1st: function(name) {
-        return name.charAt(0).toUpperCase() + name.slice(1);
-    },
-    compatibilit: function(root, name, func, specialName) {
-        root[name] = root[specialName] || root[name] || root[me.Prefix + this.upper1st(name)] || func;
     }
 };
 
-Browser.init();
+if(navigator && navigator.userAgent) {
+    Browser.init();
+}
 
 export default Browser;

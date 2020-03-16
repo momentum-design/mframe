@@ -41,7 +41,6 @@ exports.config = Object.assign({}, baseConfig, {
   entry: [
     // must be first entry to properly set public path
     './src/app/webpack-public-path',
-    'babel-polyfill',
     'webpack-hot-middleware/client?reload=true',
     path.resolve(repoRoot, 'src/app/index.js') // Defining path seems necessary for this to work consistently on Windows machines.
   ],

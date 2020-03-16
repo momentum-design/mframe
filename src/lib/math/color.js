@@ -1,14 +1,14 @@
-const Color = {
+var Color = {
     RegNum: /(-?\d+)(\.\d+)?/g,
     toRgbaArr: function(val) {
-        let r, g, b, a = 1;
+        var r, g, b, a = 1;
         if (val[0] === '#') {
-            let step = val.length === 4 ? 1 : 2;
+            var step = val.length === 4 ? 1 : 2;
             r = parseInt(val.slice(1, 1 + step), 16);
             g = parseInt(val.slice(1 + step, 1 + step * 2), 16);
             b = parseInt(val.slice(1 + step * 2, 1 + step * 3), 16);
         } else {
-            let m = val.match(this.RegNum);
+            var m = val.match(this.RegNum);
             r = +m[0];
             g = +m[1];
             b = +m[2];

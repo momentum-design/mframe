@@ -1,12 +1,11 @@
 import core from './core';
 
-class Events {
-
-  constructor () {
-    this.Events = {};
-  }
-
-  bind(key, func) {
+var Events = function () {
+  this.Events = {};
+};
+Events.prototype = {
+  RegInt: /^[1-9]\d*$/,
+  bind: function (key, func) {
     if (func._$EventGuid === undefined) {
       func._$EventGuid = core.guid();
     }
@@ -15,50 +14,40 @@ class Events {
     }
     this.Events[key][func._$EventGuid] = func;
     return func._$EventGuid;
-  }
-
-  binds(json, base) {
+  },
+  binds: function (json, base) {
     if (json) {
-      let keys = Object.keys(json),
-        key,
-        newKey,
+      var newKey,
         hasBase = typeof base === 'number';
-      for (let i = 0, l = keys.length; i < l; i++) {
-        key = keys[i];
+      for (var key in json) {
         newKey = hasBase && this.RegInt.test(key) ? base + key : key;
         this.bind(newKey, json[key]);
       }
     }
-  }
-
-  emit(key, args, caller) {
-    const events = this.Events[key];
+  },
+  emit: function (key, args, caller) {
+    var events = this.Events[key];
     if (events) {
       for (var funcGuid in events) {
         events[funcGuid].apply(caller, args);
       }
     }
-  }
-
+  },
   // emit with one arg
-  fire(key, args, caller) {
-    const events = this.Events[key];
+  fire: function (key, args, caller) {
+    var events = this.Events[key];
     if (events) {
       for (var funcGuid in events) {
         events[funcGuid].call(caller, args);
       }
     }
-  }
-
-  unbind(key, funcOrGuid) {
+  },
+  unbind: function (key, funcOrGuid) {
     if (this.Events[key]) {
-      const guid = typeof funcOrGuid === 'string' ? funcOrGuid : funcOrGuid._$EventGuid;
+      var guid = typeof funcOrGuid === 'string' ? funcOrGuid : funcOrGuid._$EventGuid;
       delete this.Events[key][guid];
     }
   }
-
-}
-
-Events.prototype.RegInt = /^[1-9]\d*$/;
+};
 
 export default Events;

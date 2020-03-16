@@ -1,6 +1,5 @@
-import Core from '../utiliy/core'
-
-const prop = {
+import Core from '../utiliy/core';
+var prop = {
     _set: function (dom, key, val) {
         dom[key] = val;
     },

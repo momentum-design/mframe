@@ -1,9 +1,9 @@
-import css from './css';
-import attr from './attr';
-import prop from './prop';
-import arg from './arg';
+import css from'./css';
+import attr from'./attr';
+import prop from'./prop';
+import arg from'./arg';
 
-const Cpu = {
+var Cpu = {
     Cores: {
         css,
         attr,
@@ -17,10 +17,9 @@ const Cpu = {
         delete this.Cores[name];
     },
     createStorage: function () {
-        let storage = {},
-            names = Object.keys(this.Cores);
-        for (let i = 0, l = names.length; i < l; i++) {
-            storage[names[i]] = {}
+        var storage = {};
+        for( var name in this.Cores) {
+            storage[name] = {};
         }
         return storage;
     },

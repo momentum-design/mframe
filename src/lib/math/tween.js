@@ -8,7 +8,7 @@
     * @param c {num} change in value（变化量）
     * @param d {num} duration（持续时间）
 */
-const Tween = {
+var Tween = {
     // test
     add: function(name, func) {
         this[name] = func;
