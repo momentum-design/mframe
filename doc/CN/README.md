@@ -12,6 +12,8 @@
 
 [Svg路径动画](./getting_started/svg_path.md)
 
+[Canvas动画](./getting_started/canvas.md)
+
 # 基本原理
 
 [动画对象](./fundamentals/motion_ojbect.md)

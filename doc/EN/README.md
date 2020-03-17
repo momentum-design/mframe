@@ -14,6 +14,8 @@ In this section, you will create examples step by step.
 
 [Svg Path](./getting_started/svg_path.md)
 
+[Canvas](./getting_started/canvas.md)
+
 # Fundamentals
 
 In this section, we will introduce base rule and principle of Momentum Charts. 
