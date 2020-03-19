@@ -43,9 +43,9 @@ After you download and go to Motion folder, you can run ```yarn build``` to gene
 
 ## Documents
 
-[English](./doc/en_US/README.md)
+[English](./doc/en_us/README.md)
 
-[中文](./doc/zh_CN/README.md)
+[中文](./doc/zh_cn/README.md)
 
 ## Contribute
 
