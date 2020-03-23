@@ -1,15 +1,12 @@
-# 开始使用
+# Canvas动画
 
-[![CircleCI](https://img.shields.io/circleci/project/github/momentum-design/momentum-ui/master.svg)](https://circleci.com/gh/momentum-design/momentum-ui/)
 [![license](https://img.shields.io/github/license/momentum-design/momentum-ui.svg?color=blueviolet)](https://github.com/momentum-design/momentum-ui/blob/master/charts/LICENSE)
 
 > mframe
 
-# Canvas动画
-
 这篇文章将会介绍如何使用mframe创建canvas动画，使用相同的api，你甚至可以用来播放音乐。
 
-HTML
+#### HTML
 
 ```
 <body>
@@ -17,7 +14,7 @@ HTML
 </body>
 ```
 
-JAVASCRIPT
+#### JAVASCRIPT
 
 ```
 var canvas = document.getElementById('canvas'),

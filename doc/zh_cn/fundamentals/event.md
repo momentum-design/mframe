@@ -1,11 +1,9 @@
-# 基本原理
+# 事件
 
-[![CircleCI](https://img.shields.io/circleci/project/github/momentum-design/momentum-ui/master.svg)](https://circleci.com/gh/momentum-design/momentum-ui/)
 [![license](https://img.shields.io/github/license/momentum-design/momentum-ui.svg?color=blueviolet)](https://github.com/momentum-design/momentum-ui/blob/master/charts/LICENSE)
 
 > mframe
 
-# 事件
 
 当你编写代码来制作动画，而不是直接使用动画素材时，你一定是想控制动画中地一些东西。非常幸运，mframe可以帮你控制动画中地每一帧。
 
@@ -25,7 +23,7 @@ var motion = mframe([{
 }], events);
 ```
 
-## mframe方法的第二个参数
+### mframe方法的第二个参数
 
 + start
 
@@ -43,7 +41,7 @@ var motion = mframe([{
 
     你也可以传递自然数，指定一个某一帧触发的动画
 
-## mframe方法的第一个参数数组中，每一个对象的events属性
+### mframe方法的第一个参数数组中，每一个对象的events属性
 
 + each
 

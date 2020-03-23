@@ -1,17 +1,14 @@
-# 开始使用
+# 立即开始
 
-[![CircleCI](https://img.shields.io/circleci/project/github/momentum-design/momentum-ui/master.svg)](https://circleci.com/gh/momentum-design/momentum-ui/)
 [![license](https://img.shields.io/github/license/momentum-design/momentum-ui.svg?color=blueviolet)](https://github.com/momentum-design/momentum-ui/blob/master/charts/LICENSE)
 
 > mframe
-
-# 立即开始
 
 ## Css 动画
 
 让我们从一个简单的实例开始。通过以下代码，你会了解如何绘制简单的css动画
 
-HTML
+#### HTML
 
 ```
 <body>
@@ -19,7 +16,7 @@ HTML
 </body>
 ```
 
-CSS
+#### CSS
 
 ```
 .ball {
@@ -32,7 +29,7 @@ CSS
 }
 ```
 
-JAVASCRIPT
+#### JAVASCRIPT
 
 ```
 var motion = mframe([{
@@ -47,7 +44,7 @@ motion.play();
 
 [点击这里体验在线实例](https://codepen.io/arthusliang/pen/WNvpmoG)
 
-### mframe
+## mframe
 
 所有的动画都需要先构建mframe实例。你通过指定关键帧来创建动画，mframe会为你自动生成补间动画。
 
@@ -56,7 +53,7 @@ motion.play();
 
 你可以同一设置css的多个属性。让我们保持css和html代码，修改以下javascript.
 
-JAVASCRIPT
+#### JAVASCRIPT
 
 ```
 var motion = mframe([{
@@ -72,7 +69,7 @@ motion.play();
 
 [点击这里体验在线实例](https://codepen.io/arthusliang/pen/RwPpdpX)
 
-### 帧规则
+## 帧规则
 
 + 如果你传入null为属性值，mframe会尝试获取该属性值。如果失败来，则忽略改属性。
 

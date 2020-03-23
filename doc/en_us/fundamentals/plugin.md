@@ -1,11 +1,8 @@
-# Fundamentals
+# Plugin
 
-[![CircleCI](https://img.shields.io/circleci/project/github/momentum-design/momentum-ui/master.svg)](https://circleci.com/gh/momentum-design/momentum-ui/)
 [![license](https://img.shields.io/github/license/momentum-design/momentum-ui.svg?color=blueviolet)](https://github.com/momentum-design/momentum-ui/blob/master/charts/LICENSE)
 
 > mframe
-
-# Plugin
 
 The mframe enable you to develop plugins for the rendering engine and easing formular.
 
@@ -23,7 +20,9 @@ mframe.Cpu.install('yourOwnMode', {
 ```
 
 + You need set up get and set in your own cpu mode.
-+ Dom could also be an array of doms. 
+
++ Dom could also be an array of doms.
+
 + The key could also be null and function.
 
 ## Tween

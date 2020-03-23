@@ -1,11 +1,8 @@
-# Getting Started
+# Spinner
 
-[![CircleCI](https://img.shields.io/circleci/project/github/momentum-design/momentum-ui/master.svg)](https://circleci.com/gh/momentum-design/momentum-ui/)
 [![license](https://img.shields.io/github/license/momentum-design/momentum-ui.svg?color=blueviolet)](https://github.com/momentum-design/momentum-ui/blob/master/charts/LICENSE)
 
 > mframe
-
-# Spinner
 
 In this section, we will teach you how to create a loading animation with mframe.
 
@@ -13,7 +10,7 @@ In this section, we will teach you how to create a loading animation with mframe
 
 In the atricle Just Start, you have already learn how to move a dom changes. You may already notice the fisrt argument in function mframe is an array. This enable you to control more than one doms.
 
-HTML
+#### HTML
 
 ```
 <body>
@@ -23,7 +20,7 @@ HTML
 </body>
 ```
 
-CSS
+#### CSS
 
 ```
 .con {
@@ -44,7 +41,7 @@ CSS
 }
 ```
 
-JAVASCRIPT
+#### JAVASCRIPT
 
 ```
 var motion = mframe([{
@@ -81,7 +78,7 @@ You can also pause an array of dom here. Notice that mframe can only get the fis
 
 Let's add more balls here. 
 
-HTML
+#### HTML
 
 ```
 <body>
@@ -97,7 +94,7 @@ HTML
 </body>
 ```
 
-CSS
+#### CSS
 
 ```
 .con {
@@ -119,7 +116,7 @@ CSS
 }
 ```
 
-JAVASCRIPT
+#### JAVASCRIPT
 
 ```
 var createMotionObject = function(id) {

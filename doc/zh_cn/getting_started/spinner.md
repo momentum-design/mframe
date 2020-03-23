@@ -1,11 +1,8 @@
-# 开始使用
+# 载入动画
 
-[![CircleCI](https://img.shields.io/circleci/project/github/momentum-design/momentum-ui/master.svg)](https://circleci.com/gh/momentum-design/momentum-ui/)
 [![license](https://img.shields.io/github/license/momentum-design/momentum-ui.svg?color=blueviolet)](https://github.com/momentum-design/momentum-ui/blob/master/charts/LICENSE)
 
 > mframe
-
-# 载入动画
 
 这篇文章会指导你如果构建一个载入动画。
 
@@ -13,7 +10,7 @@
 
 在立即开始文章中, 你已经学会为一个dom添加动画。你应该已经注意动mframe方法的第一个参数是一个数组，这就是我们如果构建多dom动画的关键。
 
-HTML
+#### HTML
 
 ```
 <body>
@@ -23,7 +20,7 @@ HTML
 </body>
 ```
 
-CSS
+#### CSS
 
 ```
 .con {
@@ -44,7 +41,7 @@ CSS
 }
 ```
 
-JAVASCRIPT
+#### JAVASCRIPT
 
 ```
 var motion = mframe([{
@@ -81,7 +78,7 @@ dom可以是一个对象或者一组对象。注意，使用null或者某个属�
 
 让我们再加入更多的球来完善动画
 
-HTML
+#### HTML
 
 ```
 <body>
@@ -97,7 +94,7 @@ HTML
 </body>
 ```
 
-CSS
+#### CSS
 
 ```
 .con {
@@ -119,7 +116,7 @@ CSS
 }
 ```
 
-JAVASCRIPT
+#### JAVASCRIPT
 
 ```
 var createMotionObject = function(id) {

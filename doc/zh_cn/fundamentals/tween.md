@@ -1,11 +1,8 @@
-# 基本原理
+# 缓动
 
-[![CircleCI](https://img.shields.io/circleci/project/github/momentum-design/momentum-ui/master.svg)](https://circleci.com/gh/momentum-design/momentum-ui/)
 [![license](https://img.shields.io/github/license/momentum-design/momentum-ui.svg?color=blueviolet)](https://github.com/momentum-design/momentum-ui/blob/master/charts/LICENSE)
 
 > mframe
-
-# 缓动
 
 为了使动画更加顺滑，你可以传入缓动公式。
 

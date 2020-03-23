@@ -1,17 +1,14 @@
-# Getting Started
+# Just Start
 
-[![CircleCI](https://img.shields.io/circleci/project/github/momentum-design/momentum-ui/master.svg)](https://circleci.com/gh/momentum-design/momentum-ui/)
 [![license](https://img.shields.io/github/license/momentum-design/momentum-ui.svg?color=blueviolet)](https://github.com/momentum-design/momentum-ui/blob/master/charts/LICENSE)
 
 > mframe
-
-# Just Start
 
 ## Css animation
 
 We will let you start with a very easy demo. In this demo, you will learn how to change dom's css.
 
-HTML
+#### HTML
 
 ```
 <body>
@@ -19,7 +16,7 @@ HTML
 </body>
 ```
 
-CSS
+#### CSS
 
 ```
 .ball {
@@ -32,7 +29,7 @@ CSS
 }
 ```
 
-JAVASCRIPT
+#### JAVASCRIPT
 
 ```
 var motion = mframe([{
@@ -47,7 +44,7 @@ motion.play();
 
 [Click here to try this demo online](https://codepen.io/arthusliang/pen/WNvpmoG)
 
-### mframe
+## mframe
 
 All the operation in mframe starting with creating an instance of motion object. The most importthing you need to do is to set up key frame status in frames. Then our lib will generator the motion automatically.
 
@@ -56,7 +53,7 @@ All the operation in mframe starting with creating an instance of motion object.
 
 It is also easy to control multiple attribution at the some time. Let's keep us the Css and Html and just do some small updates in Javascript. 
 
-JAVASCRIPT
+#### JAVASCRIPT
 
 ```
 var motion = mframe([{
@@ -72,7 +69,7 @@ motion.play();
 
 [Click here to try this demo online](https://codepen.io/arthusliang/pen/RwPpdpX)
 
-### frames rule
+## frames rule
 
 + If you set up the value to null, mframe will try to get the value of this attribute automatically. If it fails, mframe will ignore this attribution.
 

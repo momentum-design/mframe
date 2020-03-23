@@ -1,0 +1,43 @@
+on:
+  push:
+    branches:    
+      - master
+    paths:
+      - 'doc/**'
+  pull_request:
+    branches:    
+      - master
+    paths:
+      - 'doc/**'
+name: Copy Md
+jobs:
+  jobZH:
+    name: Copy Chinese Documents
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: copyTo
+      uses: andstor/copycat-action@v2.0.0
+      with:
+        personal_token: ${{ secrets.www }}
+        src_path: doc/zh_cn/.
+        dst_path: /doc/zh_cn/mframe
+        dst_owner: momentum-design
+        dst_repo_name: blog
+        username: yulhuang
+        email: yulhuang@cisco.com
+  jobEN:
+    name: Copy English Documents
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: copyTo
+      uses: andstor/copycat-action@v2.0.0
+      with:
+        personal_token: ${{ secrets.www }}
+        src_path: doc/en_us/.
+        dst_path: /doc/en_us/mframe
+        dst_owner: momentum-design
+        dst_repo_name: blog
+        username: yulhuang
+        email: yulhuang@cisco.com

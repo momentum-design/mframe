@@ -1,15 +1,12 @@
-# 开始使用
+# Svg路径动画
 
-[![CircleCI](https://img.shields.io/circleci/project/github/momentum-design/momentum-ui/master.svg)](https://circleci.com/gh/momentum-design/momentum-ui/)
 [![license](https://img.shields.io/github/license/momentum-design/momentum-ui.svg?color=blueviolet)](https://github.com/momentum-design/momentum-ui/blob/master/charts/LICENSE)
 
 > mframe
 
-# Svg路径动画
-
 这篇文章会告诉你如果构建Svg路径动画。
 
-HTML
+#### HTML
 
 ```
 <body>
@@ -24,7 +21,7 @@ HTML
 </body>
 ```
 
-JAVASCRIPT
+#### JAVASCRIPT
 
 ```
 var motion = mframe([{

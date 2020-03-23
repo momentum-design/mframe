@@ -1,11 +1,8 @@
-# Fundamentals
+# Event
 
-[![CircleCI](https://img.shields.io/circleci/project/github/momentum-design/momentum-ui/master.svg)](https://circleci.com/gh/momentum-design/momentum-ui/)
 [![license](https://img.shields.io/github/license/momentum-design/momentum-ui.svg?color=blueviolet)](https://github.com/momentum-design/momentum-ui/blob/master/charts/LICENSE)
 
 > mframe
-
-# Event
 
 When you code an animation install of playing a video, there must be something you want to control. In mframe, you can bind event to every frame you want.
 
@@ -25,7 +22,7 @@ var motion = mframe([{
 }], events);
 ```
 
-## The second argument of mframe
+### The second argument of mframe
 
 + start
 
@@ -41,15 +38,15 @@ var motion = mframe([{
 
 + frame index
 
-    The events will be emitted when rendering the frame you defined.
+The events will be emitted when rendering the frame you defined.
 
-## The attribution events of each item in the array.
+### The attribution events of each item in the array.
 
 + each
 
-    The events will be emitted in every frame rendering. The function you passed will accepted the frame index as the first argument.
+The events will be emitted in every frame rendering. The function you passed will accepted the frame index as the first argument.
 
 + frame index
 
-    The events will be emitted when rendering the frame you defined.
+The events will be emitted when rendering the frame you defined.
 

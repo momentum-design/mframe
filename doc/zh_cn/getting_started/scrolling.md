@@ -1,15 +1,12 @@
-# 开始使用
+# 滚动条动画
 
-[![CircleCI](https://img.shields.io/circleci/project/github/momentum-design/momentum-ui/master.svg)](https://circleci.com/gh/momentum-design/momentum-ui/)
 [![license](https://img.shields.io/github/license/momentum-design/momentum-ui.svg?color=blueviolet)](https://github.com/momentum-design/momentum-ui/blob/master/charts/LICENSE)
 
 > mframe
 
-# 滚动条动画
-
 很多情况下，我们需要建立滚动条动画。通过prop属性，我们可以轻松实现。
 
-HTML
+#### HTML
 
 ```
 <body>
@@ -19,7 +16,7 @@ HTML
 </body>
 ```
 
-CSS
+#### CSS
 
 ```
 .con {
@@ -36,7 +33,7 @@ CSS
 }
 ```
 
-JAVASCRIPT
+#### JAVASCRIPT
 
 ```
 var motion = mframe([{
