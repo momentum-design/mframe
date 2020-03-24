@@ -21,7 +21,7 @@ jobs:
       with:
         personal_token: ${{ secrets.www }}
         src_path: doc/zh_cn/.
-        dst_path: /doc/zh_cn/mframe
+        dst_path: /_posts/doc/zh_cn/mframe
         dst_owner: momentum-design
         dst_repo_name: blog
         username: yulhuang
@@ -36,7 +36,7 @@ jobs:
       with:
         personal_token: ${{ secrets.www }}
         src_path: doc/en_us/.
-        dst_path: /doc/en_us/mframe
+        dst_path: /_posts/doc/en_us/mframe
         dst_owner: momentum-design
         dst_repo_name: blog
         username: yulhuang
