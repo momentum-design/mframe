@@ -12,11 +12,11 @@ on:
 name: Copy Md
 jobs:
   jobZH:
-    name: Copy Chinese Documents
+    name: Copy Documents
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: copyTo
+    - name: zh_cn
       uses: andstor/copycat-action@v2.0.0
       with:
         personal_token: ${{ secrets.www }}
@@ -26,12 +26,7 @@ jobs:
         dst_repo_name: blog
         username: yulhuang
         email: yulhuang@cisco.com
-  jobEN:
-    name: Copy English Documents
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: copyTo
+    - name: en_us
       uses: andstor/copycat-action@v2.0.0
       with:
         personal_token: ${{ secrets.www }}
