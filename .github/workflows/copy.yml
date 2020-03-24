@@ -11,12 +11,12 @@ on:
       - 'doc/**'
 name: Copy Md
 jobs:
-  jobAll:
-    name: Copy Documents
+  jobZH:
+    name: Copy Chinese Documents
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: zh_cn
+    - name: copyTo
       uses: andstor/copycat-action@v2.0.0
       with:
         personal_token: ${{ secrets.www }}
@@ -27,7 +27,12 @@ jobs:
         clean: true
         username: yulhuang
         email: yulhuang@cisco.com
-    - name: en_us
+  jobEN:
+    name: Copy English Documents
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: copyTo
       uses: andstor/copycat-action@v2.0.0
       with:
         personal_token: ${{ secrets.www }}
