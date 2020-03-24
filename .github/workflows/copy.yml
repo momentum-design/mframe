@@ -11,7 +11,7 @@ on:
       - 'doc/**'
 name: Copy Md
 jobs:
-  jobZH:
+  jobAll:
     name: Copy Documents
     runs-on: ubuntu-latest
     steps:
@@ -24,6 +24,7 @@ jobs:
         dst_path: /doc/_posts/zh_cn/mframe
         dst_owner: momentum-design
         dst_repo_name: blog
+        clean: true
         username: yulhuang
         email: yulhuang@cisco.com
     - name: en_us
@@ -34,5 +35,6 @@ jobs:
         dst_path: /doc/_posts/en_us/mframe
         dst_owner: momentum-design
         dst_repo_name: blog
+        clean: true
         username: yulhuang
         email: yulhuang@cisco.com
