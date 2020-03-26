@@ -42,18 +42,18 @@ The following code shows what you can define in mframe's frame.
 
 ## How mframe generator frames
 
-    The key frames are passed in an array of one object. So you may meet the following questions.
+The key frames are passed in an array of one object. So you may meet the following questions.
 
 ## Passing two key frames with the same time
 
-    Each attribution of css/attr/prop has its own timeline. So if want to set up 2 different tween at the same time. You can set two key frames with the same time number. The latter object has a higher priority.
+Each attribution of css/attr/prop has its own timeline. So if want to set up 2 different tween at the same time. You can set two key frames with the same time number. The latter object has a higher priority.
 
 ## Generator rule
 
-    The mframe will detect if it can generate frames between 2 key frames. If not, mframe will only setup the value when rendering key frames.
+The mframe will detect if it can generate frames between 2 key frames. If not, mframe will only setup the value when rendering key frames.
 
-    All the number generated will be converted to int unless either of the input is a float number.
+All the number generated will be converted to int unless either of the input is a float number.
 
 ## Complie
 
-    Every frames will be generated and stored in the cache before mframe runs the animation. If you setup null value, mframe will complie related frames just before running animation. Otherwise, mframe will generate frames when you create the object.
+Every frames will be generated and stored in the cache before mframe runs the animation. If you setup null value, mframe will complie related frames just before running animation. Otherwise, mframe will generate frames when you create the object.
