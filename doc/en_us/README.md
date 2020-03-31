@@ -1,6 +1,6 @@
 # Introduction to the mframe docs
 
-This guide explains how to using mframe Library. The get start section shows an example which covers most usage of mframe. Foundmamentals section will show the programming principles. 
+This guide explains how to using mframe Library. The geting started section shows an example which covers most usage of mframe. Foundmamentals section will show the programming principles. 
 
 # Getting Started
 

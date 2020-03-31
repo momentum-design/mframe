@@ -28,6 +28,7 @@ jobs:
         username: yulhuang
         email: yulhuang@cisco.com
   jobEN:
+    needs: jobZH
     name: Copy English Documents
     runs-on: ubuntu-latest
     steps:
