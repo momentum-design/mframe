@@ -16,7 +16,7 @@
 
 # 基本原理
 
-[动画对象](./fundamentals/motion_ojbect.md)
+[动画对象](./fundamentals/motion_object.md)
 
 [关键帧](./fundamentals/key_frame.md)
 

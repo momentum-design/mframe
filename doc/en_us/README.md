@@ -20,7 +20,7 @@ In this section, you will create examples step by step.
 
 In this section, we will introduce base rule and principle of Momentum Charts. 
 
-[Motion Object](./fundamentals/motion_ojbect.md)
+[Motion Object](./fundamentals/motion_object.md)
 
 [Key Frame](./fundamentals/key_frame.md)
 
