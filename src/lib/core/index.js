@@ -58,14 +58,15 @@ Motion.prototype = {
         var _run = function () {
             me.Events.emit('start');
             if (ifGo()) {
-                i += stepLength;
                 me.render(i);
                 me._AnimationID = requestAnimationFrame(_run);
+                i += stepLength;
             } else {
                 me.Repeat--;
-                if (me.Repeat == 0) {
+                if (me.Repeat <= 0) {
                     me._AnimationID = null;
                     me.Events.emit('end');
+                    me.Repeat =1;
                 } else {
                     i = start;
                     me.render(i);
@@ -102,16 +103,16 @@ Motion.prototype = {
         return this;
     },
     stop: function() {
-        cancelRequestAnimationFrame(this._AnimationID);
+        cancelAnimationFrame(this._AnimationID);
         this._AnimationID = null;
         this.CurrentFrame = 0;
-        this.emit('stop');
+        this.Events.emit('stop');
         return this;
     },
     pause: function() {
-        cancelRequestAnimationFrame(this._AnimationID);
+        cancelAnimationFrame(this._AnimationID);
         this._AnimationID = null;
-        this.emit('pause');
+        this.Events.emit('pause');
         return this;
     }
 };
