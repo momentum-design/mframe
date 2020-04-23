@@ -9,9 +9,33 @@ date: 2020/3/1 10:00:00
 
 > mframe
 
+## Usage
+
+### Install
+
+Install and manage the mframe using NPM. You may use yarn or npm.
+
+```npm install mframe --save```
+
+or
+
+```yarn add mframe```
+
+### Link
+
+You can also use mframe via script tag. Get [mframe.js](https://github.com/momentum-design/mframe/blob/master/bundles/mframe.js) here.
+
+```<script type="text/javascript" src='mframe.js'></script>```
+
+
 ## Css animation
 
 We will let you start with a very easy demo. In this demo, you will learn how to change dom's css.
+
+<!--@<iframe height="300" style="width: 100%;" scrolling="no" title="Motion Start" src="https://codepen.io/arthusliang/embed/WNvpmoG?height=300&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+  See the Pen <a href='https://codepen.io/arthusliang/pen/WNvpmoG'>Motion Start</a> by Arthus
+  (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>@-->
 
 #### HTML
 
@@ -40,11 +64,14 @@ We will let you start with a very easy demo. In this demo, you will learn how to
 var motion = mframe([{
   dom: document.getElementById('ball'),
   frames: [
-    { css: { backgroundColor: '#279BE8' }, time: 0 },
-    { css: { backgroundColor: '#E6F8FF' }, time: 120, tween:'easeInOut' },
+    { css: { backgroundColor: '#07C1F5', transform: 'scale(1.0)' }, time: 0 },
+    { css: { backgroundColor: '#00CF64', transform: 'scale(1.1)' }, time: 30, tween:'easeIn'},
+    { css: { backgroundColor: '#FC9D03', transform: 'scale(1.0)' }, time: 60, tween:'easeOut' },
+    { css: { backgroundColor: '#FF9580', transform: 'scale(0.9)' }, time: 90, tween:'easeInOut' },
+    { css: { backgroundColor: '#07C1F5', transform: 'scale(1.0)' }, time: 120, tween:'easeIn' }
   ]
 }]);
-motion.play();
+motion.repeat(Infinity);
 ```
 
 [Click here to try this demo online](https://codepen.io/arthusliang/pen/WNvpmoG)
@@ -58,18 +85,25 @@ All the operation in mframe starting with creating an instance of motion object.
 
 It is also easy to control multiple attribution at the some time. Let's keep us the Css and Html and just do some small updates in Javascript. 
 
+<!--@<iframe height="300" style="width: 100%;" scrolling="no" title="Multiple Props" src="https://codepen.io/arthusliang/embed/RwPpdpX?height=300&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+  See the Pen <a href='https://codepen.io/arthusliang/pen/RwPpdpX'>Multiple Props</a> by Arthus
+  (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>@--->
+
 #### JAVASCRIPT
 
 ```
 var motion = mframe([{
   dom: document.getElementById('ball'),
   frames: [
-    { css: { backgroundColor: '#279BE8' , width: '20px', height: '20px'}, time: 0 },
-    { css: { width: '50.0px', height: '50.0px'}, time: 60 },
-    { css: { backgroundColor: '#E6F8FF' }, time: 120, tween:'easeInOut' },
+    { css: { backgroundColor: '#07C1F5', transform: 'scale(1.0)' }, time: 0 },
+    { css: { backgroundColor: '#00CF64', transform: 'scale(1.1)' }, time: 30, tween:'easeIn'},
+    { css: { backgroundColor: '#FC9D03', transform: 'scale(1.0)' }, time: 60, tween:'easeOut' },
+    { css: { backgroundColor: '#FF9580', transform: 'scale(0.9)' }, time: 90, tween:'easeInOut' },
+    { css: { backgroundColor: '#07C1F5', transform: 'scale(1.0)' }, time: 120, tween:'easeIn' }
   ]
 }]);
-motion.play();
+motion.repeat(Infinity);
 ```
 
 [Click here to try this demo online](https://codepen.io/arthusliang/pen/RwPpdpX)

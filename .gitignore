@@ -49,7 +49,6 @@ bundle.min.js.map
 /build
 /lib
 /es
-/bundles
 
 # Packages #
 ############
