@@ -32,7 +32,7 @@ date: 2020/3/1 20:00:00
 
 让我们从一个简单的实例开始。通过以下代码，你会了解如何绘制简单的css动画。
 
-<!--@<iframe height="300" style="width: 100%;" scrolling="no" title="Motion Start" src="https://codepen.io/arthusliang/embed/WNvpmoG?height=300&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+<!--@<iframe height="300" scrolling="no" title="Motion Start" src="https://codepen.io/arthusliang/embed/WNvpmoG?height=300&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
   See the Pen <a href='https://codepen.io/arthusliang/pen/WNvpmoG'>Motion Start</a> by Arthus
   (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>@-->
@@ -85,7 +85,7 @@ motion.repeat(Infinity);
 
 你可以同一设置css的多个属性。让我们保持css和html代码，修改以下javascript.
 
-<!--@<iframe height="300" style="width: 100%;" scrolling="no" title="Multiple Props" src="https://codepen.io/arthusliang/embed/RwPpdpX?height=300&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+<!--@<iframe height="300" scrolling="no" title="Multiple Props" src="https://codepen.io/arthusliang/embed/RwPpdpX?height=300&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
   See the Pen <a href='https://codepen.io/arthusliang/pen/RwPpdpX'>Multiple Props</a> by Arthus
   (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>@--->

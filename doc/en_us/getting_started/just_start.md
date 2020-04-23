@@ -32,7 +32,7 @@ You can also use mframe via script tag. Get [mframe.js](https://github.com/momen
 
 We will let you start with a very easy demo. In this demo, you will learn how to change dom's css.
 
-<!--@<iframe height="300" style="width: 100%;" scrolling="no" title="Motion Start" src="https://codepen.io/arthusliang/embed/WNvpmoG?height=300&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+<!--@<iframe height="300" scrolling="no" title="Motion Start" src="https://codepen.io/arthusliang/embed/WNvpmoG?height=300&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
   See the Pen <a href='https://codepen.io/arthusliang/pen/WNvpmoG'>Motion Start</a> by Arthus
   (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>@-->
@@ -85,7 +85,7 @@ All the operation in mframe starting with creating an instance of motion object.
 
 It is also easy to control multiple attribution at the some time. Let's keep us the Css and Html and just do some small updates in Javascript. 
 
-<!--@<iframe height="300" style="width: 100%;" scrolling="no" title="Multiple Props" src="https://codepen.io/arthusliang/embed/RwPpdpX?height=300&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+<!--@<iframe height="300" scrolling="no" title="Multiple Props" src="https://codepen.io/arthusliang/embed/RwPpdpX?height=300&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
   See the Pen <a href='https://codepen.io/arthusliang/pen/RwPpdpX'>Multiple Props</a> by Arthus
   (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>@--->
