@@ -12,45 +12,31 @@ date: 2020/3/3 10:00:00
 
 很多情况下，我们需要建立滚动条动画。通过prop属性，我们可以轻松实现。
 
-#### HTML
+<!--@<iframe height="305" style="width: 100%;" scrolling="no" title="scroll" src="https://codepen.io/arthusliang/embed/poJemaj?height=305&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+  See the Pen <a href='https://codepen.io/arthusliang/pen/poJemaj'>scroll</a> by Arthus
+  (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>@-->
 
-```
-<body>
-  <div class='con' id='con'>
-    <div class='inner'></div>
-  </div>
-</body>
-```
+[点击这里体验在线实例](https://codepen.io/arthusliang/pen/poJemaj)
 
-#### CSS
-
-```
-.con {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  overflow-y:scroll;
-  overflow-x:hidden;
-}
-.inner {
-  background: linear-gradient(#e66465, #9198e5);
-  width:200px;
-  height:800px;
-}
-```
-
-#### JAVASCRIPT
+#### 代码
 
 ```
 var motion = mframe([{
   dom: document.getElementById('con'),
   frames: [
     { prop: { scrollTop: 0 }, time: 0 },
-    { prop: { scrollTop: 600 }, time: 120, tween: 'easeOut' },
-    { prop: { scrollTop: 0 }, time: 240, tween: 'easeIn' }
+    { prop: { scrollTop: 600 }, time: 120, tween: 'easeInBounce' },
+    { prop: { scrollTop: 0 }, time: 240, tween: 'easeOutBounce' }
   ]
 }]);
 motion.repeat(Infinity);
 ```
 
-[点击这里体验在线实例](https://codepen.io/arthusliang/pen/poJemaj)
+#### prop
+
+我们在这里使用prop, 它等同时调用了```dom.scrollTop```
+
+#### easeOutBounce
+
+我们有更多缓动公式，在这里，我们尝试了bounce。

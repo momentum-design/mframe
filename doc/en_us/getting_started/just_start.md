@@ -37,6 +37,8 @@ We will let you start with a very easy demo. In this demo, you will learn how to
   (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>@-->
 
+[Click here to try this demo online](https://codepen.io/arthusliang/pen/WNvpmoG)
+
 #### HTML
 
 ```
@@ -74,8 +76,6 @@ var motion = mframe([{
 motion.repeat(Infinity);
 ```
 
-[Click here to try this demo online](https://codepen.io/arthusliang/pen/WNvpmoG)
-
 ## mframe
 
 All the operation in mframe starting with creating an instance of motion object. The most importthing you need to do is to set up key frame status in frames. Then our lib will generator the motion automatically.
@@ -89,6 +89,8 @@ It is also easy to control multiple attribution at the some time. Let's keep us 
   See the Pen <a href='https://codepen.io/arthusliang/pen/RwPpdpX'>Multiple Props</a> by Arthus
   (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>@-->
+
+[Click here to try this demo online](https://codepen.io/arthusliang/pen/RwPpdpX)
 
 #### JAVASCRIPT
 
@@ -105,8 +107,6 @@ var motion = mframe([{
 }]);
 motion.repeat(Infinity);
 ```
-
-[Click here to try this demo online](https://codepen.io/arthusliang/pen/RwPpdpX)
 
 ## frames rule
 

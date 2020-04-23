@@ -15,38 +15,14 @@ In this section, we will teach you how to create a loading animation with mframe
 
 In the atricle Just Start, you have already learn how to move a dom changes. You may already notice the fisrt argument in function mframe is an array. This enable you to control more than one doms.
 
-#### HTML
+<!--@<iframe height="400" style="width: 100%;" scrolling="no" title="Multiple Doms" src="https://codepen.io/arthusliang/embed/mdJWoGe?height=400&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+  See the Pen <a href='https://codepen.io/arthusliang/pen/mdJWoGe'>Multiple Doms</a> by Arthus
+  (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>@-->
 
-```
-<body>
-  <div class='con' id='con'>
-    <div id='ball' class='ball'></div>
-  </div>
-</body>
-```
+[Click here to try this demo online](https://codepen.io/arthusliang/details/mdJWoGe)
 
-#### CSS
-
-```
-.con {
-  top:200px;
-  left:200px;
-  position: absolute;
-  width: 200px;
-  height: 200px;
-}
-.ball {
-  top:80px;
-  left:0px;
-  position: absolute;
-  border-radius: 50%;
-  background-color: #279BE8;
-  width: 40px;
-  height:40px;
-}
-```
-
-#### JAVASCRIPT
+#### Code
 
 ```
 var motion = mframe([{
@@ -67,10 +43,6 @@ var motion = mframe([{
 motion.repeat(Infinity);
 ```
 
-[Click here to try this demo online](https://codepen.io/arthusliang/details/mdJWoGe)
-
-In this demo, you will control one container to rotate while control a ball to change its attribution.
-
 ### repeat
 
 You can use repeat to setup how many times you want to play this animation.
@@ -83,45 +55,16 @@ You can also pause an array of dom here. Notice that mframe can only get the fis
 
 Let's add more balls here. 
 
-#### HTML
+In this demo, you will control one container to rotate while control a ball to change its attribution.
 
-```
-<body>
-  <div class='con' id='con1'>
-    <div id='ball1' class='ball'></div>
-  </div>
-    <div class='con' id='con2'>
-    <div id='ball2' class='ball'></div>
-  </div>
-    <div class='con' id='con3'>
-    <div id='ball3' class='ball'></div>
-  </div>
-</body>
-```
+<!--@<iframe height="500" style="width: 100%;" scrolling="no" title="loading" src="https://codepen.io/arthusliang/embed/poJeYXL?height=500&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+  See the Pen <a href='https://codepen.io/arthusliang/pen/poJeYXL'>loading</a> by Arthus
+  (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>@-->
 
-#### CSS
+[Click here to try this demo online](https://codepen.io/arthusliang/pen/poJeYXL)
 
-```
-.con {
-  top:200px;
-  left:200px;
-  position: absolute;
-  width: 200px;
-  height: 200px;
-}
-.ball {
-  opacity: 0;
-  top:0px;
-  left:80px;
-  position: absolute;
-  border-radius: 50%;
-  background-color: #279BE8;
-  width: 40px;
-  height:40px;
-}
-```
-
-#### JAVASCRIPT
+#### Code
 
 ```
 var createMotionObject = function(id) {
@@ -148,5 +91,3 @@ var motion = mframe(args);
 
 motion.repeat(Infinity);
 ```
-
-[Click here to try this demo online](https://codepen.io/arthusliang/pen/poJeYXL)

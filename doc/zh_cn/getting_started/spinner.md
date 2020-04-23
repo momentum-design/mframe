@@ -16,38 +16,14 @@ date: 2020/3/2 10:00:00
 
 在立即开始文章中, 你已经学会为一个dom添加动画。你应该已经注意动mframe方法的第一个参数是一个数组，这就是我们如果构建多dom动画的关键。
 
-#### HTML
+<!--@<iframe height="400" style="width: 100%;" scrolling="no" title="Multiple Doms" src="https://codepen.io/arthusliang/embed/mdJWoGe?height=400&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+  See the Pen <a href='https://codepen.io/arthusliang/pen/mdJWoGe'>Multiple Doms</a> by Arthus
+  (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>@-->
 
-```
-<body>
-  <div class='con' id='con'>
-    <div id='ball' class='ball'></div>
-  </div>
-</body>
-```
+[点击这里体验在线实例](https://codepen.io/arthusliang/details/mdJWoGe)
 
-#### CSS
-
-```
-.con {
-  top:200px;
-  left:200px;
-  position: absolute;
-  width: 200px;
-  height: 200px;
-}
-.ball {
-  top:80px;
-  left:0px;
-  position: absolute;
-  border-radius: 50%;
-  background-color: #279BE8;
-  width: 40px;
-  height:40px;
-}
-```
-
-#### JAVASCRIPT
+#### 代码
 
 ```
 var motion = mframe([{
@@ -68,8 +44,6 @@ var motion = mframe([{
 motion.repeat(Infinity);
 ```
 
-[点击这里体验在线实例](https://codepen.io/arthusliang/details/mdJWoGe)
-
 这个例子中，我们在改变小球的同时，旋转了它的容器。
 
 ### repeat
@@ -80,49 +54,18 @@ motion.repeat(Infinity);
 
 dom可以是一个对象或者一组对象。注意，使用null或者某个属性值时，如果dom是数组，mframe只返回第一元素的值。
 
-## Make a spinner
+## 制作完整的载入动画
 
 让我们再加入更多的球来完善动画
 
-#### HTML
+<!--@<iframe height="500" style="width: 100%;" scrolling="no" title="loading" src="https://codepen.io/arthusliang/embed/poJeYXL?height=500&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+  See the Pen <a href='https://codepen.io/arthusliang/pen/poJeYXL'>loading</a> by Arthus
+  (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>@-->
 
-```
-<body>
-  <div class='con' id='con1'>
-    <div id='ball1' class='ball'></div>
-  </div>
-    <div class='con' id='con2'>
-    <div id='ball2' class='ball'></div>
-  </div>
-    <div class='con' id='con3'>
-    <div id='ball3' class='ball'></div>
-  </div>
-</body>
-```
+[点击这里体验在线实例](https://codepen.io/arthusliang/pen/poJeYXL)
 
-#### CSS
-
-```
-.con {
-  top:200px;
-  left:200px;
-  position: absolute;
-  width: 200px;
-  height: 200px;
-}
-.ball {
-  opacity: 0;
-  top:0px;
-  left:80px;
-  position: absolute;
-  border-radius: 50%;
-  background-color: #279BE8;
-  width: 40px;
-  height:40px;
-}
-```
-
-#### JAVASCRIPT
+#### 代码
 
 ```
 var createMotionObject = function(id) {
@@ -149,5 +92,3 @@ var motion = mframe(args);
 
 motion.repeat(Infinity);
 ```
-
-[Click here to try this demo online](https://codepen.io/arthusliang/pen/poJeYXL)

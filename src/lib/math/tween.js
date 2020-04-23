@@ -88,7 +88,7 @@ var Tween = {
         return c/2 * (Math.sqrt(1 - (t-=2)*t) + 1) + b;
     },
     easeInBounce:function(t,b,c,d){
-        return c - tween.bounceEaseOut(d-t, 0, c, d) + b;
+        return c - Tween.easeOutBounce(d-t, 0, c, d) + b;
     },
     easeOutBounce:function(t,b,c,d){
         if ((t/=d) < (1/2.75)) {
@@ -102,8 +102,8 @@ var Tween = {
         }
     },
     easeInOutBounce:function(t,b,c,d){
-        if (t < d/2) return tween.bounceEaseIn(t*2, 0, c, d) * .5 + b;
-        else return tween.bounceEaseOut(t*2-d, 0, c, d) * .5 + c*.5 + b;
+        if (t < d/2) return Tween.easeInBounce(t*2, 0, c, d) * .5 + b;
+        else return Tween.easeOutBounce(t*2-d, 0, c, d) * .5 + c*.5 + b;
     }
 };
 

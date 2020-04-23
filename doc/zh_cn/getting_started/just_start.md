@@ -37,6 +37,8 @@ date: 2020/3/1 20:00:00
   (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>@-->
 
+[点击这里体验在线实例](https://codepen.io/arthusliang/pen/WNvpmoG)
+
 #### HTML
 
 ```
@@ -74,8 +76,6 @@ var motion = mframe([{
 motion.repeat(Infinity);
 ```
 
-[点击这里体验在线实例](https://codepen.io/arthusliang/pen/WNvpmoG)
-
 ## mframe
 
 所有的动画都需要先构建mframe实例。你通过指定关键帧来创建动画，mframe会为你自动生成补间动画。
@@ -89,6 +89,8 @@ motion.repeat(Infinity);
   See the Pen <a href='https://codepen.io/arthusliang/pen/RwPpdpX'>Multiple Props</a> by Arthus
   (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>@-->
+
+[点击这里体验在线实例](https://codepen.io/arthusliang/pen/RwPpdpX)
 
 #### JAVASCRIPT
 
@@ -105,8 +107,6 @@ var motion = mframe([{
 }]);
 motion.repeat(Infinity);
 ```
-
-[点击这里体验在线实例](https://codepen.io/arthusliang/pen/RwPpdpX)
 
 ## 帧规则
 

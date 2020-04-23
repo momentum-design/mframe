@@ -11,15 +11,14 @@ date: 2020/3/5 10:00:00
 
 This article will teach you how to create canvas animation. You can also use these Api to play music!
 
-#### HTML
+<!--@<iframe height="400" style="width: 100%;" scrolling="no" title="breathe" src="https://codepen.io/arthusliang/embed/wvajZJp?height=400&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
+  See the Pen <a href='https://codepen.io/arthusliang/pen/wvajZJp'>breathe</a> by Arthus
+  (<a href='https://codepen.io/arthusliang'>@arthusliang</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>@-->
 
-```
-<body>
-  <canvas id='canvas' width='400' height='300' class='canvas'></canvas>
-</body>
-```
+[Click here to try this demo online](https://codepen.io/arthusliang/pen/wvajZJp)
 
-#### JAVASCRIPT
+#### Code
 
 ```
 var canvas = document.getElementById('canvas'),
@@ -28,9 +27,9 @@ var canvas = document.getElementById('canvas'),
 var motion = mframe([{
   dom: ctx,
   frames:[
-    { arg:{r1:60,r2:55, r3:50}, time:0},
-    { arg:{r1:70,r2:62, r3:56}, time:40, tween:'easeIn'},
-    { arg:{r1:60,r2:55, r3:50}, time:60, tween:'easeInOut'}
+    { arg:{r1:'60',r2:'55', r3:'50'}, time:0},
+    { arg:{r1:'70.0',r2:'62.0', r3:'56.0'}, time:40, tween:'easeIn'},
+    { arg:{r1:'60.0',r2:'55.0', r3:'50.0'}, time:70, tween:'easeInOut'}
   ],
   events: {
     beforeEach: function() {
@@ -58,8 +57,6 @@ var motion = mframe([{
 
 motion.repeat(Infinity);
 ```
-
-[Click here to try this demo online](https://codepen.io/arthusliang/pen/wvajZJp)
 
 ### beforeEach
 
