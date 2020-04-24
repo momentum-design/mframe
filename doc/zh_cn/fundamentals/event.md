@@ -10,10 +10,13 @@ date: 2020/3/5 10:00:00
 
 > mframe
 
+## 用法
 
 当你编写代码来制作动画，而不是直接使用动画素材时，你一定是想控制动画中地一些东西。非常幸运，mframe可以帮你控制动画中的每一帧。
 
-在mframe中，你有两个地方可以设置事件。
+在mframe中，你可以设置global_events和dom_events。
+
+#### 例
 
 ```
 var motion = mframe([{
@@ -22,38 +25,130 @@ var motion = mframe([{
     { css: { backgroundColor: '#279BE8' }, time: 0 },
     { css: { backgroundColor: '#E6F8FF' }, time: 120, tween:'easeInOut' },
   ],
-  events: {
-      0: ()=> {},
-      'each': (index)=> {}
-  }
-}], events);
+  dom_events
+}], global_events);
 ```
 
-### mframe方法的第二个参数
+## global_events
+
+以下示例展示了global_events所有可以设置的属性，并且按照调用的先后顺序排列。
+
+#### 例
+
+```
+global_events = {
+	start: function() {},
+	beforeEach: function(frame_index) {},
+	// dom_events 会在这个时候调用
+	each: function(frame_index) {},
+	'10': function() {},
+	end: function() {},
+	stop: function() {},
+	pause: function() {}
+};
+```
 
 + start
 
-    start事件在动画开始时触发。
+	start事件会在动画最开始的时候被调用。
+
++ beforeEach
+
+	beforeEach事件在每一帧渲染前被调用。
+
++ each
+
+	each事件在每一帧渲染后被调用。
+
++ _number
+
+	_number代表在某一帧触发的事件，它在each事件后被调用。	
 
 + end
 
-    end事件在动画结束时触发。
+	end事件在动画结束时被调用（repeat为0时）。
+
++ stop
+
+	stop事件在mframe实例调用stop方法时被调用。
+
++ pause
+
+	pause事件在mframe实例调用pause方法时被调用。
+
+### bind
+
+你也可以在mframe实例创建后绑定global_events。
+
+#### 例
+
+```
+var motion = mframe([{
+  dom: document.getElementById('ball'),
+  frames: [
+    { css: { backgroundColor: '#279BE8' }, time: 0 },
+    { css: { backgroundColor: '#E6F8FF' }, time: 120},
+  ]]);
+motion.bind('stop', function() {});
+```
+
+## dom_events
+
+以下示例展示了dom_events所有可以设置的属性，并且按照调用的先后顺序排列。 
+
+#### 例
+
+```
+dom_events = {
+	beforeEach: function(frame_index) {}
+	each: function(frame_index, arg) {},
+	'10': function() {}
+};
+```
+
++ beforeEach
+
+	beforeEach事件在每一帧渲染前被调用。
 
 + each
 
-    start事件每一帧都会触发，并且接受一个参数作为来获取当前的帧序数。
+	each事件在每一帧渲染后被调用。
 
-+ frame index
++ _number
 
-    你也可以传递自然数，指定一个某一帧触发的动画
+	_number代表在某一帧触发的事件，它在each事件后被调用。	
 
-### mframe方法的第一个参数数组中，每一个对象的events属性
+## 参数
 
-+ each
+以上展示的例子也展示了各个事件可以接收哪些参数
 
-    start事件每一帧都会触发，并且接受一个参数作为来获取当前的帧序数。帧序数相对当前对象，而不是整个动画对象
+### frame_index
 
-+ frame index
+整数，代表当前帧的序数。
 
-    你也可以传递自然数，指定一个某一帧触发的动画
+### arg
 
+如果你在mframe对象中使用了arg(和css, attr, prop同级)， 它会创建其属性在每一帧的数值。
+
+#### 例
+
+```
+var motion = mframe([{
+  dom: ctx,
+  frames:[
+    { arg:{r:'60'}, time:0},
+    { arg:{r:'63'}, time:3}
+  ],
+  events: {
+    each: function(i, arg){
+		console.log(i, arg);
+		/* out put
+			0, { r: 60 }
+			1, { r: 61 }
+			2, { r: 62 }
+			3, { r: 63 }
+		*/
+    }
+  }
+}]);
+```

@@ -14,6 +14,10 @@ mframe允许开发人员创建自己的插件来强大它的功能。目前mfram
 
 ## Cpu
 
+Cpu模块在mframe中定义元素如何在渲染帧时设置属性
+
+#### define
+
 ```
 mframe.Cpu.install('yourOwnMode', {
     get: function(dom, key, val) {
@@ -26,13 +30,51 @@ mframe.Cpu.install('yourOwnMode', {
 ```
 
 + 你可以自定义渲染引擎，就像css/attr/prop
-+ Dom可以是一个Dom对象或者一组Dom对象数组 
+
++ Dom可以是一个Dom对象或者一组Dom对象数组
+
 + 值可以是方法或者null
 
+#### usage
+
+```
+var motion = mframe([{
+	dom: dom,
+	frames: [
+		{ time: 0, yourOwnMode: {} },
+		{ time: 10, yourOwnMode: {} },
+	]
+}]);
+```
+
 ## Tween
+
+你可以在mframe中使用如下代码自定义缓动公式
+
+#### define
 
 ```
 mframe.Tween.add('yourTweenName', function(t, b, c, d) {
     return 0;
 });
+```
+
++ t - 开始时间
+
++ b - 开始值
+
++ c - 变化值
+
++ d - 持续时间
+
+#### usage
+
+```
+var motion = mframe([{
+	dom: dom,
+	frames: [
+		{ time: 0, css: { width: '0px'} },
+		{ time: 10, css: { width: '10px'}, tween: 'yourTweenName' },
+	]
+}]);
 ```

@@ -66,11 +66,12 @@ We will let you start with a very easy demo. In this demo, you will learn how to
 var motion = mframe([{
   dom: document.getElementById('ball'),
   frames: [
-    { css: { backgroundColor: '#07C1F5', transform: 'scale(1.0)' }, time: 0 },
-    { css: { backgroundColor: '#00CF64', transform: 'scale(1.1)' }, time: 30, tween:'easeIn'},
-    { css: { backgroundColor: '#FC9D03', transform: 'scale(1.0)' }, time: 60, tween:'easeOut' },
-    { css: { backgroundColor: '#FF9580', transform: 'scale(0.9)' }, time: 90, tween:'easeInOut' },
-    { css: { backgroundColor: '#07C1F5', transform: 'scale(1.0)' }, time: 120, tween:'easeIn' }
+    { css: { backgroundColor: '#07C1F5' }, time: 0 },
+    { css: { backgroundColor: '#00CF64' }, time: 30},
+    { css: { backgroundColor: '#FC9D03' }, time: 60 },
+    { css: { backgroundColor: '#FF9580' }, time: 90 },
+    { css: { backgroundColor: '#F294F1' }, time: 120 },
+    { css: { backgroundColor: '#07C1F5' }, time: 150 }
   ]
 }]);
 motion.repeat(Infinity);
