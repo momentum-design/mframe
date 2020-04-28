@@ -11,13 +11,12 @@ on:
       - 'doc/**'
 name: Copy Md
 jobs:
-  build:
-    name: build bunddles
+  jobBundles:
+    name: Copy Bundles
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
-    - name: copy_lib
+    - uses: actions/checkout@master
+    - name: copyTo
       uses: andstor/copycat-action@v2.0.0
       with:
         personal_token: ${{ secrets.www }}
@@ -28,7 +27,13 @@ jobs:
         clean: true
         username: yulhuang
         email: yulhuang@cisco.com
-    - name: copy_zh_cn
+  jobZH:
+    needs: jobBundles
+    name: Copy Chinese Documents
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: copyTo
       uses: andstor/copycat-action@v2.0.0
       with:
         personal_token: ${{ secrets.www }}
@@ -39,7 +44,13 @@ jobs:
         clean: true
         username: yulhuang
         email: yulhuang@cisco.com
-    - name: copy_en_us
+  jobEN:
+    needs: jobZH
+    name: Copy English Documents
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: copyTo
       uses: andstor/copycat-action@v2.0.0
       with:
         personal_token: ${{ secrets.www }}
