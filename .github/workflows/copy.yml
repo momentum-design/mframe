@@ -11,12 +11,30 @@ on:
       - 'doc/**'
 name: Copy Md
 jobs:
-  jobZH:
-    name: Copy Chinese Documents
+  build:
+    name: build bunddles
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: copyTo
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: "10.x"
+    - name: build
+      run: yarn && yarn build
+    - name: copy_lib
+      uses: andstor/copycat-action@v2.0.0
+      with:
+        personal_token: ${{ secrets.www }}
+        src_path: bundles/.
+        dst_path: /themes/momentum/source/lib/mframe
+        dst_owner: momentum-design
+        dst_repo_name: blog
+        clean: true
+        username: yulhuang
+        email: yulhuang@cisco.com
+    - name: copy_zh_cn
       uses: andstor/copycat-action@v2.0.0
       with:
         personal_token: ${{ secrets.www }}
@@ -27,13 +45,7 @@ jobs:
         clean: true
         username: yulhuang
         email: yulhuang@cisco.com
-  jobEN:
-    needs: jobZH
-    name: Copy English Documents
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: copyTo
+    - name: copy_en_us
       uses: andstor/copycat-action@v2.0.0
       with:
         personal_token: ${{ secrets.www }}
