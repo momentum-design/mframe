@@ -7,16 +7,14 @@ window.onload = function() {
     //example();
 
     var b2 = document.getElementById('app');
-		
-	b2.style.display = 'none';
 
 	var m = mframe([{
 		dom: b2,
 		frames: [
-			{ time: 0, css: { opacity: '0.0', display: ()=> {
+			{ time: 0, css: { opacity: '1.0' } },
+			{ time: 100, css: { opacity: '0.0', display: ()=> {
 				return '';
-			}}},
-			{ time: 100, css: { opacity: '1.0'}}
+			}} }
 		]
 	}]);
 

@@ -40,7 +40,7 @@ KeyFrames.prototype = {
             keys = this.Keys,
             timing = this.Timing;
         if (timing.length === 1) {
-            this.Frames[0] = this.val(keys[timing[0]].value);
+            this.Frames[timing[0]] = this.val(keys[timing[0]].value);
             return;
         }
         for (var index in this._LaterComplie) {
@@ -64,7 +64,7 @@ KeyFrames.prototype = {
             if (this._ifLaterComplie(_val)) {
                 this._LaterComplie[0] = true;
             }
-            this.Frames[0] = _val;
+            this.Frames[timing[0]] = _val;
             return;
         }
         for (var i = 0, l = timing.length - 1; i < l; i++) {
