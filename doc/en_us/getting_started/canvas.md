@@ -9,7 +9,7 @@ date: 2020/3/5 10:00:00
 
 > mframe
 
-This article will teach you how to create canvas animation. You can also use these Api to play music!
+This article will teach you how to create canvas animation. You can also use these API to play music!
 
 <!--@<iframe height="400" style="width: 100%;" scrolling="no" title="breathe" src="https://codepen.io/arthusliang/embed/wvajZJp?height=400&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
   See the Pen <a href='https://codepen.io/arthusliang/pen/wvajZJp'>breathe</a> by Arthus
