@@ -20,9 +20,13 @@ var Color = {
         return 'rgba(' + rgbaArr.join(',') + ')';
     },
     toHex: function(rgbaArr) {
-        return '#' + rgbaArr[0].toString(16)
-            + rgbaArr[1].toString(16)
-            + rgbaArr[2].toString(16);
+        return '#' + this.to16(rgbaArr[0])
+            + this.to16(rgbaArr[1])
+            + this.to16(rgbaArr[2]);
+    },
+    to16: function(val) {
+        var v = val.toString(16);
+        return v.length===1 ? '0'+v : v;
     }
 };
 export default Color;
