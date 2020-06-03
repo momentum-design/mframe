@@ -99,7 +99,7 @@ motion.pause();
 ### run
 
 ```
-motion.start();
+motion.run();
 ```
 
 #### arugments
@@ -122,4 +122,12 @@ Repeat the animation the times you want.
 
 ```
 motion.repeat(1);
+```
+
+### state
+
+To set the motion to one frame. The second argument sets if the animation plays from the frame zero.
+
+```
+motion.state(10, true);
 ```

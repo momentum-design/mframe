@@ -1,3 +1,5 @@
+const RegInt = /^(-?[1-9]\d*)|0$/;
+
 var Core = {
   guid: function () {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
@@ -42,6 +44,9 @@ var Core = {
       return n >= 0 ? n : d;
     }
     return d;
+  },
+  isInt: function(v) {
+    return RegInt.test(v);
   }
 };
 

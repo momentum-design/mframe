@@ -104,7 +104,7 @@ motion.pause();
 ### run
 
 ```
-motion.start();
+motion.run();
 ```
 
 #### 参数
@@ -127,4 +127,12 @@ motion.reverse();
 
 ```
 motion.repeat(1);
+```
+
+### state
+
+设置动画到某一帧。第二个参数指定播放动画到方向是否为从0帧到最后一帧。
+
+```
+motion.state(10, true);
 ```

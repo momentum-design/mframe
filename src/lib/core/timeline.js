@@ -56,22 +56,40 @@ Timeline.prototype = {
         }
         return ret;
     },
+    state: function (i, isFromZeroToEnd) {
+        let index;
+        if(i< this.ZeroFrame) {
+            if (!isFromZeroToEnd) {
+                index = this.zeroFrame;
+            }
+        } else if (i>this.LastFrame) {
+            if (isFromZeroToEnd) {
+                index = this.LastFrame;
+            }
+        } else {
+            index = i- this.ZeroFrame;
+        }
+        if (typeof index === 'number') {
+            var endFrame = isFromZeroToEnd ? this.ZeroFrame : this.LastFrame;
+            this._excuteStorage('state', [index, isFromZeroToEnd, endFrame]);
+        }
+    },
     render: function(i) {
         if (i>=this.ZeroFrame && i<= this.LastFrame) {
             let index = i- this.ZeroFrame;
             this.Events.emit('beforeEach',[index]);
-            this._excuteStorage('render', index);
+            this._excuteStorage('render', [index]);
             this.Events.emit('each', [index, this.getArgs(index)]);
             this.Events.emit(index);
         }
     },
-    _excuteStorage: function(funcName, time) {
+    _excuteStorage: function(funcName, args) {
         var storage = this.Storage,
             coreStorage;
         for(var n in storage) {
             coreStorage = storage[n];
             for(var m in coreStorage) {
-                coreStorage[m][funcName](time);
+                coreStorage[m][funcName].apply(coreStorage[m], args);
             }
         }
     },

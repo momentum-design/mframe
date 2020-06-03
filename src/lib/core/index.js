@@ -34,19 +34,19 @@ Motion.prototype = {
         this.Events.bind(key, func);
         return this;
     },
-    run: function (startFrame, endFrame) {
-
+    run: function (startFrame, endFrame, resetStart) {
         if (this._AnimationID) {
             return this;
         }
 
         var start = Core.int(startFrame, this.CurrentFrame),
             end = Core.int(endFrame, this.LastFrame),
+            resetStart = !!resetStart ? (start <= end ? 0 : this.LastFrame) : start,
             i = start,
             stepLength,
             ifGo,
             me = this;
-
+            
         if (start <= end) {
             stepLength = 1;
             ifGo = function () { return i <= end; };
@@ -66,9 +66,9 @@ Motion.prototype = {
                 if (me.Repeat <= 0) {
                     me._AnimationID = null;
                     me.Events.emit('end');
-                    me.Repeat =1;
+                    me.Repeat = 1;
                 } else {
-                    i = start;
+                    i = resetStart;
                     me.render(i);
                     me._AnimationID = requestAnimationFrame(_run);
                 }
@@ -80,40 +80,51 @@ Motion.prototype = {
         _run();
         return this;
     },
-    _complie: function() {
+    _complie: function () {
         Core.each(this.Timelines, 'complie');
     },
-    render: function(i) {
+    state: function (i, isFromZeroToEnd) {
+        if (0 <= i && i <= this.LastFrame) {
+            isFromZeroToEnd = isFromZeroToEnd === undefined ? true : !!isFromZeroToEnd;
+            this._complie();
+            Core.each(this.Timelines, 'state', [i, isFromZeroToEnd]);
+            this.CurrentFrame = i;
+        }
+    },
+    render: function (i) {
         this.Events.emit('beforeEach', [i]);
         Core.each(this.Timelines, 'render', [i]);
         this.Events.emit('each', [i]);
         this.Events.emit(i);
         this.CurrentFrame = i;
     },
-    reverse: function() {
+    reverse: function () {
         this.run(this.CurrentFrame > 0 ? this.CurrentFrame : this.LastFrame, 0);
         return this;
     },
-    repeat: function(repeat) {
+    repeat: function (repeat) {
         this.Repeat = repeat;
         this.play();
     },
-    play: function() {
+    play: function () {
         this.run();
         return this;
     },
-    stop: function() {
+    stop: function () {
         cancelAnimationFrame(this._AnimationID);
         this._AnimationID = null;
         this.CurrentFrame = 0;
         this.Events.emit('stop');
         return this;
     },
-    pause: function() {
+    pause: function () {
         cancelAnimationFrame(this._AnimationID);
         this._AnimationID = null;
         this.Events.emit('pause');
         return this;
+    },
+    isPlaying: function() {
+        return !!this._AnimationID;
     }
 };
 

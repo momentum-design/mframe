@@ -88,6 +88,25 @@ KeyFrames.prototype = {
             return value;
         }
     },
+    state: function(i, isFromZeroToEnd, endFrame) {
+        if(isFromZeroToEnd) {
+            while(i>=endFrame) {
+                if(this.Frames[i] !== undefined) {
+                    this.CpuCore.set(this.Dom, this.PropName, this.Frames[i]);
+                    break;
+                }
+                i--;
+            }
+        } else {
+            while(i<=endFrame) {
+                if(this.Frames[i] !== undefined) {
+                    this.CpuCore.set(this.Dom, this.PropName, this.Frames[i]);
+                    break;
+                }
+                i++;
+            }
+        }
+    },
     render:function(i) {
         if (this.Frames[i] !== undefined) {
             this.CpuCore.set(this.Dom, this.PropName, this.Frames[i]);

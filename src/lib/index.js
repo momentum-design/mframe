@@ -1,5 +1,6 @@
 import Motion from './core/index';
 import Cpu from'./cpu/index';
+import Speed from './speed/index';
 import Tween from'./math/tween';
 
 var MFrame = function(configs, events) {
@@ -8,6 +9,9 @@ var MFrame = function(configs, events) {
 
 MFrame.Cpu = Cpu;
 MFrame.Tween = Tween;
+MFrame.speed = function(configs, events, x) {
+    return new Speed(configs, events, x);
+};
 
 var registerWindow = function(name, func) {
     if (typeof window !== 'undefined' && window[name] === undefined) {
