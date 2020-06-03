@@ -34,7 +34,7 @@ motion.speed(0.5);
 
 ### 数组
 
-The speedConfig could be an array of number. Mframe will generate the instance automatically.
+SpeedConfig可以是一个浮点数数组，mframe会自动计算各个速度下的动画。
 
 #### 例子
 
@@ -44,7 +44,7 @@ var SpeedConfig = [0.5,1,2]; // 1 will be ignore
 
 ### 对象
 
-You can also define what you want in the motion with different speed. The key of speedConfig define the speed. If the value of one key is number, Mframe will generate the instance automatically.
+当你使用对象作为SpeedConfig时，key用来指定速度。value为true时，mframe会自动计算动画。当value值是对象或者数组时，value会被用来创建动画。
 
 #### 例子
 
@@ -62,11 +62,11 @@ var SpeedConfig ={
 
 ```
 
-## Method
+## 方法
 
 ### speed
 
-Start the animation to a new speed.
+切换速度。
 
 ```
 motion.speed(2);
@@ -74,7 +74,7 @@ motion.speed(2);
 
 ### play
 
-Start the animation from current frame index.
+播放动画。
 
 ```
 motion.play();
@@ -88,7 +88,7 @@ motion.run();
 
 ### stop
 
-Stop the animation and setup the current frame index to 0.
+停止动画。
 
 ```
 motion.stop();
@@ -96,7 +96,7 @@ motion.stop();
 
 ### pause
 
-Pause the animation
+暂停动画。
 
 ```
 motion.pause();
@@ -104,7 +104,7 @@ motion.pause();
 
 ### reverse
 
-Play the animtion from the last frame to the first frame.
+反转动画。
 
 ```
 motion.reverse();
@@ -112,7 +112,7 @@ motion.reverse();
 
 ### repeat
 
-Repeat the animation the times you want.
+重复动画。
 
 ```
 motion.repeat(1);
@@ -120,7 +120,7 @@ motion.repeat(1);
 
 ### state
 
-To set the motion to one frame. The second argument sets if the animation plays from the frame zero.
+切换到指定一帧。
 
 ```
 motion.state(10, true);
