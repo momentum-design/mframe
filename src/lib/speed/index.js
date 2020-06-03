@@ -124,7 +124,7 @@ class Speed {
     }
 
     speed(x) {
-        if(typeof x === 'number') {
+        if(typeof x === 'number' && x!=this.current()) {
             if (this.Mframes[x] === undefined) {
                 this.xspeed([x]);
             }
