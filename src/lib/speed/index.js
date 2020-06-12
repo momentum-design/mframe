@@ -1,28 +1,26 @@
 import Motion from '../core/index';
 import Core from '../utiliy/core';
 
-class Speed {
+var Speed = function(config, events, x) {
+    this._Config = Core.isArray(config) ? config : [config];
+    this._Events = events;
+    this._isFromeZero = true;
+    this.Mframes = {
+        '1': new Motion(config, events)
+    };
+    this.CurrentSpeed = 1;
+    this.x(x);
+};
 
-    constructor (config, events, x) {
-        this._Config = Core.isArray(config) ? config : [config];
-        this._Events = events;
-        this._isFromeZero = true;
-        this.Mframes = {
-            '1': new Motion(config, events)
-        };
-        this.CurrentSpeed = 1;
-        this.x(x);
-    }
-
-    x(x) {
+Speed.prototype = {
+    x: function(x) {
         if (Core.isArray(x) && x.length > 0) {
             this.xspeed(x);
         } else if(x) {
             this.xconfig(x);
         }
-    }
-
-    _xspeed(speed) {
+    },
+    _xspeed: function(speed) {
         var _config = this._Config,
             events = this._u_event(this._Events, speed),
             config=[];
@@ -30,20 +28,18 @@ class Speed {
             config.push(this._u_config(_config[i], speed));
         }
         return new Motion(config, events);
-    }
-
+    },
     /*
     0.5 1 2
     */
-    xspeed(x) {
+    xspeed: function(x) {
         for (var i = 0, l = x.length; i < l; i++) {
             var speed = x[i];
             if (typeof speed === 'number' && speed!==1) {
                 this.Mframes[speed] = this._xspeed(speed);
             }
         }
-    }
-
+    },
     /*
     {
         1: {},
@@ -51,7 +47,7 @@ class Speed {
         1.5: true
     }
     */
-    xconfig(config) {
+    xconfig: function(config) {
         var speed,
             val;
         for (var name in config) {
@@ -65,13 +61,11 @@ class Speed {
                 }
             }
         }
-    }
-
-    _u_time(key, base, speed) {
+    },
+    _u_time: function(key, base, speed) {
         return Math.ceil(key*speed/base);
-    }
-
-    _u_config(config, speed) {
+    },
+    _u_config: function(config, speed) {
         var ret = {},
             item;
         for (var name in config) {
@@ -92,9 +86,8 @@ class Speed {
             }
         }
         return ret;
-    }
-
-    _u_event(event, speed) {
+    },
+    _u_event: function(event, speed) {
         if (event) {
             var ret={};
             for (var key in event) {
@@ -109,21 +102,18 @@ class Speed {
         } else {
             return event;
         }
-    }
-
-    current(val) {
+    },
+    current: function(val) {
         if(typeof val === 'number') {
             this.CurrentSpeed = val;
         } else {
             return this.CurrentSpeed;
         }
-    }
-
-    currentMframe() {
+    },
+    currentMframe: function() {
         return this.Mframes[this.CurrentSpeed];
-    }
-
-    speed(x) {
+    },
+    speed: function(x) {
         if(typeof x === 'number' && x!=this.current()) {
             if (this.Mframes[x] === undefined) {
                 this.xspeed([x]);
@@ -141,43 +131,35 @@ class Speed {
             }
             this.current(x);
         }
-    }
-
-    play() {
+    },
+    play: function() {
         var m = this.currentMframe();
         m.play.apply(m, arguments);
-    }
-
-    stop() {
+    },
+    stop: function() {
         var m = this.currentMframe();
         m.stop.apply(m, arguments);
-    }
-
-    pause() {
+    },
+    pause: function()  {
         var m = this.currentMframe();
         m.pause.apply(m, arguments);
-    }
-
-    repeat() {
+    },
+    repeat: function() {
         var m = this.currentMframe();
         m.repeat.apply(m, arguments);
-    }
-
-    reverse() {
+    },
+    reverse: function()  {
         var m = this.currentMframe();
         m.reverse.apply(m, arguments);
-    }
-
-    run() {
+    },
+    run: function()  {
         var m = this.currentMframe();
         m.run.apply(m, arguments);
-    }
-
-    state() {
+    },
+    state: function()  {
         var m = this.currentMframe();
         m.state.apply(m, arguments);
     }
-
 }
 
 export default Speed;
