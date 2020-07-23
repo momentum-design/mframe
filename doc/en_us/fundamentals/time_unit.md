@@ -32,7 +32,7 @@ var motion = mframe([{
 }]);
 ```
 
-#### append frame
+#### append frames
 
 ```
 var motion = mframe([{

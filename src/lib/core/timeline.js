@@ -57,7 +57,7 @@ Timeline.prototype = {
         return ret;
     },
     state: function (i, isFromZeroToEnd) {
-        let index;
+        var index;
         if(i< this.ZeroFrame) {
             if (!isFromZeroToEnd) {
                 index = this.zeroFrame;
@@ -76,7 +76,7 @@ Timeline.prototype = {
     },
     render: function(i) {
         if (i>=this.ZeroFrame && i<= this.LastFrame) {
-            let index = i- this.ZeroFrame;
+            var index = i- this.ZeroFrame;
             this.Events.emit('beforeEach',[index]);
             this._excuteStorage('render', [index]);
             this.Events.emit('each', [index, this.getArgs(index)]);

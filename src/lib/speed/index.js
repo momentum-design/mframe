@@ -71,10 +71,12 @@ Speed.prototype = {
         for (var name in config) {
             item = config[name];
             if (name === 'frames') {
-                var _f = [],
-                    _item;
+                var _f = [];
                 for (var i = 0, l = item.length; i < l; i++) {
-                    _item = Object.assign({}, item[i]);
+                    var _item = {};
+                    for(var name in item[i]) {
+                        _item[name] = item[i][name];
+                    }
                     _item.time = this._u_time(_item.time, 1, speed);
                     _f.push(_item);
                 }

@@ -1,4 +1,4 @@
-const RegInt = /^(-?[1-9]\d*)|0$/;
+var RegInt = /^(-?[1-9]\d*)|0$/;
 
 var Core = {
   guid: function () {
