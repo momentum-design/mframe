@@ -24,5 +24,4 @@ const runES = async() => {
 module.exports = {
     runES
 };
-
 /* eslint-enable no-console */

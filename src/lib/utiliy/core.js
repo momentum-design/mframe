@@ -1,5 +1,4 @@
 var RegInt = /^(-?[1-9]\d*)|0$/;
-
 var Core = {
   guid: function () {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
