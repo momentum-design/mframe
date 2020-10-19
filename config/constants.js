@@ -7,7 +7,7 @@ exports.distRoot = path.join(exports.repoRoot, 'dist/');
 exports.appRoot = path.join(exports.repoRoot, 'src/app/');
 
 exports.libRoot = path.join(exports.repoRoot, 'lib/');
-exports.esRoot = path.join(exports.repoRoot, 'es/');
+exports.es5Root = path.join(exports.repoRoot, 'es5/');
 
 exports.componentRoot = path.join(exports.srcRoot, 'lib/');
 exports.cssRoot = path.join(exports.repoRoot, 'css/');

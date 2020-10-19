@@ -48,7 +48,7 @@ bundle.min.js.map
 /dist
 /build
 /lib
-/es
+/es5
 
 # Packages #
 ############
