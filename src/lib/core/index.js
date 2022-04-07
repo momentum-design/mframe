@@ -104,7 +104,7 @@ Motion.prototype = {
     },
     repeat: function (repeat) {
         this.Repeat = repeat;
-        this.play();
+        return this.play();
     },
     play: function () {
         this.run();

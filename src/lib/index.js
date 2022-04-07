@@ -3,13 +3,13 @@ import Cpu from'./cpu/index';
 import Speed from './speed/index';
 import Tween from'./math/tween';
 
-var MFrame = function(configs, events) {
+var mframe = function(configs, events) {
     return new Motion(configs, events);
 };
 
-MFrame.Cpu = Cpu;
-MFrame.Tween = Tween;
-MFrame.speed = function(configs, events, x) {
+mframe.Cpu = Cpu;
+mframe.Tween = Tween;
+mframe.speed = function(configs, events, x) {
     return new Speed(configs, events, x);
 };
 
@@ -19,7 +19,7 @@ var registerWindow = function(name, func) {
     }
 };
 
-registerWindow('mf', MFrame);
-registerWindow('mframe', MFrame);
+registerWindow('mf', mframe);
+registerWindow('mframe', mframe);
 
-export default MFrame;
+export default mframe;

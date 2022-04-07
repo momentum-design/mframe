@@ -131,7 +131,7 @@ Motion.prototype = {
   },
   repeat: function repeat(_repeat) {
     this.Repeat = _repeat;
-    this.play();
+    return this.play();
   },
   play: function play() {
     this.run();

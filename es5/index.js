@@ -15,14 +15,14 @@ var _tween = _interopRequireDefault(require("./math/tween"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var MFrame = function MFrame(configs, events) {
+var mframe = function mframe(configs, events) {
   return new _index.default(configs, events);
 };
 
-MFrame.Cpu = _index2.default;
-MFrame.Tween = _tween.default;
+mframe.Cpu = _index2.default;
+mframe.Tween = _tween.default;
 
-MFrame.speed = function (configs, events, x) {
+mframe.speed = function (configs, events, x) {
   return new _index3.default(configs, events, x);
 };
 
@@ -32,7 +32,7 @@ var registerWindow = function registerWindow(name, func) {
   }
 };
 
-registerWindow('mf', MFrame);
-registerWindow('mframe', MFrame);
-var _default = MFrame;
+registerWindow('mf', mframe);
+registerWindow('mframe', mframe);
+var _default = mframe;
 exports.default = _default;
